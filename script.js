@@ -9,19 +9,25 @@
   const directCount = document.querySelector('#direct-count');
   const showMore = document.querySelector('#show-more');
   const dialog = document.querySelector('#collection-dialog');
+  const collectionView = document.querySelector('#collection-view');
+  const designView = document.querySelector('#design-view');
   const templateList = document.querySelector('#template-list');
   const comingSoon = document.querySelector('#coming-soon');
   const toast = document.querySelector('#copy-toast');
   let activeFilter = 'All';
   let visibleLimit = 12;
   let toastTimer;
+  let activeCollectionId = null;
+  let returnFocus = null;
 
   const normalize = value => String(value || '').toLowerCase().trim();
   const validCanvaUrl = value => {
     try { const url = new URL(value); return url.protocol === 'https:' && ['canva.com', 'www.canva.com', 'canva.link'].includes(url.hostname); }
     catch { return false; }
   };
-  const published = templates.filter(item => validCanvaUrl(item.canvaUrl) && categories.some(category => category.id === item.category));
+  const validPreview = value => typeof value === 'string' && (/^assets\/[\w./-]+\.(?:png|jpe?g|webp)$/i.test(value) || /^https:\/\//i.test(value));
+  // A supplied preview can be listed before its Canva template link is ready.
+  const published = templates.filter(item => item.id && item.title && categories.some(category => category.id === item.category) && (validPreview(item.image) || validCanvaUrl(item.canvaUrl)));
   const templateFor = id => published.filter(item => item.category === id);
   const findCategory = id => categories.find(item => item.id === id);
   const searchableTemplate = item => {
@@ -29,21 +35,68 @@
     return [item.title, item.role, ...(Array.isArray(item.tags) ? item.tags : []), item.format, category?.title, category?.tag].join(' ').toLowerCase();
   };
 
+  function createPreview(item, large = false) {
+    const frame = document.createElement('div'); frame.className = large ? 'design-preview-frame' : 'template-preview-frame';
+    const placeholder = document.createElement('div'); placeholder.className = 'template-placeholder'; placeholder.textContent = item.title;
+    if (validPreview(item.image)) {
+      const img = document.createElement('img'); img.src = item.image; img.alt = `Full preview of ${item.title}`; img.loading = large ? 'eager' : 'lazy'; img.decoding = 'async';
+      img.addEventListener('error', () => img.replaceWith(placeholder), { once: true });
+      frame.append(img);
+    } else frame.append(placeholder);
+    return frame;
+  }
+
   function createTemplateCard(item) {
-    const article = document.createElement('article'); article.className = 'template-item';
-    if (item.image && /^(assets\/|https:\/\/)/.test(item.image)) {
-      const img = document.createElement('img'); img.src = item.image; img.alt = `${item.title} preview`; img.loading = 'lazy'; article.append(img);
-    } else {
-      const placeholder = document.createElement('div'); placeholder.className = 'template-placeholder'; placeholder.textContent = item.title; article.append(placeholder);
-    }
+    const card = document.createElement('button'); card.type = 'button'; card.className = 'template-item';
+    card.setAttribute('aria-label', `View ${item.title} preview`);
+    card.append(createPreview(item));
     const body = document.createElement('div'); body.className = 'template-item-body';
     const category = findCategory(item.category);
     const label = document.createElement('span'); label.className = 'template-category'; label.textContent = category.title;
     const heading = document.createElement('h3'); heading.textContent = item.title;
     const meta = document.createElement('p'); meta.textContent = [item.role, item.format || 'Poster'].filter(Boolean).join(' · ');
-    const link = document.createElement('a'); link.href = item.canvaUrl; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = 'Use in Canva ↗';
-    body.append(label, heading, meta, link); article.append(body);
-    return article;
+    const action = document.createElement('span'); action.className = 'template-view-action'; action.textContent = 'View design ↗';
+    body.append(label, heading, meta, action); card.append(body);
+    card.addEventListener('click', () => openDesign(item));
+    return card;
+  }
+
+  function showCollection(id) {
+    const category = findCategory(id);
+    if (!category) return;
+    activeCollectionId = id;
+    document.querySelector('#dialog-kicker').textContent = `${category.tag} / Collection ${category.mark}`;
+    document.querySelector('#dialog-title').textContent = category.title;
+    const available = templateFor(id);
+    document.querySelector('#dialog-description').textContent = available.length
+      ? 'Choose a design to see its full preview and Canva editing option.'
+      : (category.details || 'A dedicated collection for this poster type.');
+    templateList.replaceChildren(...available.map(createTemplateCard));
+    comingSoon.hidden = available.length > 0;
+    designView.hidden = true;
+    collectionView.hidden = false;
+    dialog.setAttribute('aria-labelledby', 'dialog-title');
+    history.replaceState(null, '', `#collection-${id}`);
+  }
+
+  function openDesign(item) {
+    if (!dialog.open) { returnFocus = document.activeElement; dialog.showModal(); }
+    showCollection(item.category);
+    document.querySelector('#design-preview').replaceChildren(createPreview(item, true));
+    document.querySelector('#design-kicker').textContent = findCategory(item.category).title;
+    document.querySelector('#design-title').textContent = item.title;
+    document.querySelector('#design-meta').textContent = [item.role, item.format || 'Poster'].filter(Boolean).join(' · ');
+    const link = document.querySelector('#design-canva-link');
+    const hasLink = validCanvaUrl(item.canvaUrl);
+    link.hidden = !hasLink;
+    if (hasLink) link.href = item.canvaUrl;
+    else link.removeAttribute('href');
+    document.querySelector('#design-link-pending').hidden = hasLink;
+    collectionView.hidden = true;
+    designView.hidden = false;
+    dialog.setAttribute('aria-labelledby', 'design-title');
+    history.replaceState(null, '', `#design-${encodeURIComponent(item.id)}`);
+    document.querySelector('#design-back').focus();
   }
 
   function render() {
@@ -79,19 +132,11 @@
   }
 
   function openCollection(id) {
-    const category = findCategory(id);
-    if (!category) return;
-    document.querySelector('#dialog-kicker').textContent = `${category.tag} / Collection ${category.mark}`;
-    document.querySelector('#dialog-title').textContent = category.title;
-    const available = templateFor(id);
-    document.querySelector('#dialog-description').textContent = available.length
-      ? 'Choose a design to open its Canva template. Replace the sample text and images with your club details before publishing.'
-      : (category.details || 'A dedicated collection for this poster type.');
-    templateList.replaceChildren();
-    available.forEach(item => templateList.append(createTemplateCard(item)));
-    comingSoon.hidden = available.length > 0;
-    dialog.showModal();
-    history.replaceState(null, '', `#collection-${id}`);
+    if (!findCategory(id)) return;
+    returnFocus = document.activeElement;
+    showCollection(id);
+    if (!dialog.open) dialog.showModal();
+    document.querySelector('#dialog-close').focus();
   }
 
   document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => {
@@ -107,8 +152,16 @@
     if (event.key === '/' && !dialog.open && !/input|textarea/i.test(document.activeElement.tagName)) { event.preventDefault(); search.focus(); }
   });
   document.querySelector('#dialog-close').addEventListener('click', () => dialog.close());
+  document.querySelector('#design-back').addEventListener('click', () => {
+    showCollection(activeCollectionId);
+    document.querySelector('#dialog-close').focus();
+  });
   dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
-  dialog.addEventListener('close', () => { if (location.hash.startsWith('#collection-')) history.replaceState(null, '', '#library'); });
+  dialog.addEventListener('close', () => {
+    if (location.hash.startsWith('#collection-') || location.hash.startsWith('#design-')) history.replaceState(null, '', '#library');
+    if (returnFocus?.isConnected) returnFocus.focus();
+    returnFocus = null;
+  });
   document.querySelectorAll('.swatch').forEach(button => button.addEventListener('click', async () => {
     const hex = button.dataset.hex;
     try { await navigator.clipboard.writeText(hex); toast.textContent = `${hex} copied to clipboard`; }
@@ -118,4 +171,8 @@
   render();
   const initial = decodeURIComponent(location.hash.slice(1));
   if (initial.startsWith('collection-')) openCollection(initial.slice('collection-'.length));
+  else if (initial.startsWith('design-')) {
+    const item = published.find(design => design.id === initial.slice('design-'.length));
+    if (item) openDesign(item);
+  }
 })();
