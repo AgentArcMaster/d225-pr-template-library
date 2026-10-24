@@ -5,7 +5,7 @@ A static HTML/CSS/JavaScript website. It has no package installation, build step
 ## Add a Canva template
 
 1. In Canva, open the finished design. Choose **Share → Template link → Create template link → Copy**. Do not share an editable link to the original design.
-2. Export a preview image and place it in `assets/` (for example `assets/best-timer-01.webp`). A square preview works well; the site crops it to a square.
+2. Export a preview image and place it in `assets/` (for example `assets/best-timer-01.webp`). Square, portrait, story, and document previews are shown in full without cropping. Use a clear, reasonably compressed PNG, JPEG, or WebP.
 3. Open `catalog.js`. Add an object inside the `templates: [ ... ]` array. Separate entries with commas.
 
 ```js
@@ -21,7 +21,9 @@ A static HTML/CSS/JavaScript website. It has no package installation, build step
 }
 ```
 
-Replace the example URL with an actual `https://www.canva.com/...` or `https://canva.link/...` template link. The site displays only entries with valid Canva domains and a valid category ID. Preview images are optional, but strongly recommended.
+Replace the example URL with an actual `https://www.canva.com/...` or `https://canva.link/...` **template** link. Use a design's template link rather than a link that edits the team's original design. If the preview arrives first, set `canvaUrl: ''`; the tile and full preview will be visible, with a “coming soon” message where the Canva button will appear. An entry needs a valid category ID, title, unique ID, and either a preview image or valid Canva link.
+
+Visitors choose a collection, see all of its design tiles, click one for a full preview, then select **Edit in Canva** once its template link has been added. Search results use the same preview and detail flow.
 
 Use a unique `id` for every design. Set `role` and descriptive `tags` for specific posters, such as Timer, Grammarian, Ah-Counter, or Contest Official. The main search indexes the design's title, role, tags, format, and collection. The same design also appears inside its collection.
 
