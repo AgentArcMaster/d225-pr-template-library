@@ -92,6 +92,15 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/pathways-completion-03.webp',
       canvaUrl: 'https://canva.link/sg1a21cdcs8qt1z'
+    },
+    {
+      id: 'pathways-completion-04',
+      category: 'pathways-completion',
+      title: 'Pathways Completion — Design 4',
+      tags: ['pathway completion', 'pathways', 'education award', 'member recognition'],
+      format: 'Square',
+      image: 'assets/pathways-completion-04.png',
+      canvaUrl: 'https://canva.link/kt1ogjljwi5gw1p'
     }
   ]
 };
