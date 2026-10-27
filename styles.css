@@ -17,6 +17,7 @@
 .collection-dialog [hidden]{display:none!important}
 #collection-view>p{color:#587482;max-width:650px}
 .template-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.collection-update{margin:24px 0 0;padding:16px 20px;background:var(--pale);border-left:3px solid var(--maroon);font:700 13px var(--heading);color:var(--blue)}
 .template-item{display:block;width:100%;padding:0;background:#fff;color:var(--blue);text-align:left;transition:transform .18s ease,box-shadow .18s ease}
 .template-item:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,40,60,.12)}
 .template-preview-frame{aspect-ratio:1;background:#f1f4f5;display:grid;place-items:center;overflow:hidden}

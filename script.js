@@ -8,6 +8,7 @@
   const collectionView = document.querySelector('#collection-view');
   const designView = document.querySelector('#design-view');
   const templateList = document.querySelector('#template-list');
+  const collectionUpdate = document.querySelector('#collection-update');
   const comingSoon = document.querySelector('#coming-soon');
   const toast = document.querySelector('#copy-toast');
   let activeFilter = 'All';
@@ -71,6 +72,8 @@
       : (category.details || 'A dedicated collection for this poster type.');
     templateList.replaceChildren(...available.map(createTemplateCard));
     comingSoon.hidden = available.length > 0;
+    collectionUpdate.textContent = category.note || '';
+    collectionUpdate.hidden = !category.note || allDesigns.length === 0;
     designView.hidden = true;
     collectionView.hidden = false;
     dialog.setAttribute('aria-labelledby', 'dialog-title');

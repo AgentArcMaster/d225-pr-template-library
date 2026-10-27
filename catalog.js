@@ -6,7 +6,7 @@
 // Title, role, tags, category keywords, and format are indexed by the main search.
 window.D225_CATALOG = {
   categories: [
-    { id: 'level-completion', title: 'Level Completion', tag: 'Pathways', keywords: 'level 1 2 3 4 5 achievement education', mark: '01' },
+    { id: 'level-completion', title: 'Level Completion', tag: 'Pathways', keywords: 'level 1 2 3 4 5 achievement education', note: 'More designs dropping soon.', mark: '01' },
     { id: 'pathways-completion', title: 'Pathways Completion', tag: 'Pathways', keywords: 'path completion educational journey', mark: '02' },
     { id: 'speakers-evaluators', title: 'Speakers & Evaluators', tag: 'Meetings', keywords: 'speaker evaluator speech evaluation', mark: '03' },
     { id: 'meeting-leaders', title: 'TMOD / GE / TTM', tag: 'Meetings', keywords: 'toastmaster of the day general evaluator table topics master roles individual', mark: '04' },
