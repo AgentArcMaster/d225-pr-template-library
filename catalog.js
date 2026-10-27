@@ -83,6 +83,15 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/pathways-completion-02.webp',
       canvaUrl: 'https://canva.link/21cm8la8ve5gnuz'
+    },
+    {
+      id: 'pathways-completion-03',
+      category: 'pathways-completion',
+      title: 'Pathways Completion — Design 3',
+      tags: ['pathway completion', 'pathways', 'education award', 'presentation mastery', 'member recognition'],
+      format: 'Square',
+      image: 'assets/pathways-completion-03.webp',
+      canvaUrl: 'https://canva.link/sg1a21cdcs8qt1z'
     }
   ]
 };
