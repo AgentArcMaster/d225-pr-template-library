@@ -4,10 +4,6 @@
   const search = document.querySelector('#template-search');
   const count = document.querySelector('#results-count');
   const empty = document.querySelector('#empty-search');
-  const directResults = document.querySelector('#direct-results');
-  const directGrid = document.querySelector('#direct-grid');
-  const directCount = document.querySelector('#direct-count');
-  const showMore = document.querySelector('#show-more');
   const dialog = document.querySelector('#collection-dialog');
   const collectionView = document.querySelector('#collection-view');
   const designView = document.querySelector('#design-view');
@@ -15,7 +11,6 @@
   const comingSoon = document.querySelector('#coming-soon');
   const toast = document.querySelector('#copy-toast');
   let activeFilter = 'All';
-  let visibleLimit = 12;
   let toastTimer;
   let activeCollectionId = null;
   let returnFocus = null;
@@ -67,7 +62,10 @@
     activeCollectionId = id;
     document.querySelector('#dialog-kicker').textContent = `${category.tag} / Collection ${category.mark}`;
     document.querySelector('#dialog-title').textContent = category.title;
-    const available = templateFor(id);
+    const allDesigns = templateFor(id);
+    const query = normalize(search.value);
+    const matchingDesigns = query ? allDesigns.filter(item => searchableTemplate(item).includes(query)) : [];
+    const available = matchingDesigns.length ? matchingDesigns : allDesigns;
     document.querySelector('#dialog-description').textContent = available.length
       ? 'Choose a design to see its full preview and Canva editing option.'
       : (category.details || 'A dedicated collection for this poster type.');
@@ -101,17 +99,9 @@
 
   function render() {
     const query = normalize(search.value);
-    const designMatches = published.filter(item => {
-      const category = findCategory(item.category);
-      return (activeFilter === 'All' || category.tag === activeFilter) && (!query || searchableTemplate(item).includes(query));
-    });
-    directResults.hidden = designMatches.length === 0;
-    directGrid.replaceChildren(...designMatches.slice(0, visibleLimit).map(createTemplateCard));
-    directCount.textContent = `${designMatches.length} ${designMatches.length === 1 ? 'design' : 'designs'}`;
-    showMore.hidden = designMatches.length <= visibleLimit;
     const matches = categories.filter(item => {
       const inFilter = activeFilter === 'All' || item.tag === activeFilter;
-      const searchable = [item.title, item.tag, item.keywords, ...templateFor(item.id).flatMap(t => [t.title, t.role, ...(Array.isArray(t.tags) ? t.tags : [])])].join(' ').toLowerCase();
+      const searchable = [item.title, item.tag, item.keywords, ...templateFor(item.id).map(searchableTemplate)].join(' ').toLowerCase();
       return inFilter && (!query || searchable.includes(query));
     });
     grid.replaceChildren();
@@ -128,7 +118,7 @@
       grid.append(card);
     });
     count.textContent = `${matches.length} ${matches.length === 1 ? 'collection' : 'collections'}`;
-    empty.hidden = matches.length !== 0 || designMatches.length !== 0;
+    empty.hidden = matches.length !== 0;
   }
 
   function openCollection(id) {
@@ -142,11 +132,10 @@
   document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => {
     activeFilter = button.dataset.filter;
     document.querySelectorAll('.filter').forEach(b => { const selected = b === button; b.classList.toggle('active', selected); b.setAttribute('aria-pressed', String(selected)); });
-    visibleLimit = 12; render();
+    render();
   }));
-  search.addEventListener('input', () => { visibleLimit = 12; render(); });
-  document.querySelectorAll('[data-query]').forEach(button => button.addEventListener('click', () => { search.value = button.dataset.query; visibleLimit = 12; render(); search.focus(); }));
-  showMore.addEventListener('click', () => { visibleLimit += 12; render(); });
+  search.addEventListener('input', render);
+  document.querySelectorAll('[data-query]').forEach(button => button.addEventListener('click', () => { search.value = button.dataset.query; render(); search.focus(); }));
   document.querySelector('#clear-search').addEventListener('click', () => { search.value = ''; document.querySelector('[data-filter="All"]').click(); search.focus(); });
   document.addEventListener('keydown', event => {
     if (event.key === '/' && !dialog.open && !/input|textarea/i.test(document.activeElement.tagName)) { event.preventDefault(); search.focus(); }
