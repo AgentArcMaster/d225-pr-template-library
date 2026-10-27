@@ -20,5 +20,15 @@ window.D225_CATALOG = {
     { id: 'club-contest', title: 'Club Contest', tag: 'Contests', keywords: 'winner participant contest officials humorous evaluation international table topics', details: 'Templates for contest winners, participants, and contest officials.', mark: '12' },
     { id: 'testimonials', title: 'Testimonials', tag: 'Community', keywords: 'member stories quotes experience', mark: '13' }
   ],
-  templates: []
+  templates: [
+    {
+      id: 'level-completion-01',
+      category: 'level-completion',
+      title: 'Level Completion — Design 1',
+      tags: ['pathways', 'level completion', 'achievement', 'member recognition', 'presentation mastery'],
+      format: 'Square',
+      image: 'assets/level-completion-01.png',
+      canvaUrl: 'https://canva.link/ah1ab2bugfnd60g'
+    }
+  ]
 };
