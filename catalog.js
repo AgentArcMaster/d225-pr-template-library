@@ -47,6 +47,15 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/level-completion-03.webp',
       canvaUrl: 'https://canva.link/2hg0au5f3fm4q9f'
+    },
+    {
+      id: 'level-completion-04',
+      category: 'level-completion',
+      title: 'Level Completion — Design 4',
+      tags: ['pathways', 'level completion', 'achievement', 'member recognition', 'presentation mastery'],
+      format: 'Square',
+      image: 'assets/level-completion-04.webp',
+      canvaUrl: 'https://canva.link/p8ngacs75sbn99z'
     }
   ]
 };
