@@ -110,6 +110,15 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/pathways-completion-05.png',
       canvaUrl: 'https://canva.link/3t16jp9mf3ja4o9'
+    },
+    {
+      id: 'speakers-evaluators-01',
+      category: 'speakers-evaluators',
+      title: 'Speakers & Evaluators — Design 1',
+      tags: ['speaker', 'evaluator', 'prepared speech', 'meeting poster', 'meeting role'],
+      format: 'Square',
+      image: 'assets/speakers-evaluators-01.png',
+      canvaUrl: 'https://canva.link/0pvyqxzf4wwydms'
     }
   ]
 };
