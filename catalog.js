@@ -119,6 +119,42 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/speakers-evaluators-01.png',
       canvaUrl: 'https://canva.link/0pvyqxzf4wwydms'
+    },
+    {
+      id: 'speakers-evaluators-02',
+      category: 'speakers-evaluators',
+      title: 'Speakers & Evaluators — Design 2',
+      tags: ['speaker', 'evaluator', 'prepared speech', 'meeting poster', 'meeting role'],
+      format: 'Square',
+      image: 'assets/speakers-evaluators-02.png',
+      canvaUrl: 'https://canva.link/9e3ipfid0f9ef2f'
+    },
+    {
+      id: 'speakers-evaluators-03',
+      category: 'speakers-evaluators',
+      title: 'Speakers & Evaluators — Design 3',
+      tags: ['speaker', 'evaluator', 'prepared speech', 'meeting poster', 'meeting role'],
+      format: 'Square',
+      image: 'assets/speakers-evaluators-03.png',
+      canvaUrl: 'https://canva.link/i6png5lm6yod99c'
+    },
+    {
+      id: 'speakers-evaluators-04',
+      category: 'speakers-evaluators',
+      title: 'Speakers & Evaluators — Design 4',
+      tags: ['speaker', 'evaluator', 'prepared speech', 'meeting poster', 'meeting role'],
+      format: 'Square',
+      image: 'assets/speakers-evaluators-04.png',
+      canvaUrl: 'https://canva.link/gaqp93ajkvz3wts'
+    },
+    {
+      id: 'speakers-evaluators-05',
+      category: 'speakers-evaluators',
+      title: 'Speakers & Evaluators — Design 5',
+      tags: ['speaker', 'evaluator', 'prepared speech', 'meeting poster', 'meeting role'],
+      format: 'Square',
+      image: 'assets/speakers-evaluators-05.png',
+      canvaUrl: 'https://canva.link/gnlyh7ri8bihcot'
     }
   ]
 };
