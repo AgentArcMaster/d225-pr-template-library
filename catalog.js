@@ -8,7 +8,7 @@ window.D225_CATALOG = {
   categories: [
     { id: 'level-completion', title: 'Level Completion', tag: 'Pathways', keywords: 'level 1 2 3 4 5 achievement education', note: 'More designs dropping soon.', mark: '01' },
     { id: 'pathways-completion', title: 'Pathways Completion', tag: 'Pathways', keywords: 'path completion educational journey', note: 'More designs dropping soon.', mark: '02' },
-    { id: 'speakers-evaluators', title: 'Speakers & Evaluators', tag: 'Meetings', keywords: 'speaker evaluator speech evaluation', mark: '03' },
+    { id: 'speakers-evaluators', title: 'Speakers & Evaluators', tag: 'Meetings', keywords: 'speaker evaluator speech evaluation', note: 'More designs dropping soon.', mark: '03' },
     { id: 'meeting-leaders', title: 'TMOD / GE / TTM', tag: 'Meetings', keywords: 'toastmaster of the day general evaluator table topics master roles individual', mark: '04' },
     { id: 'triple-crown', title: 'Triple Crown', tag: 'Recognition', keywords: 'education award triple crown', mark: '05' },
     { id: 'club-awards', title: 'Club Awards', tag: 'Recognition', keywords: 'club award achievement distinguished', mark: '06' },
