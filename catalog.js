@@ -229,15 +229,15 @@ window.D225_CATALOG = {
   ],
   zoom: {
     roles: [
-      { id: 'district-officers', label: 'District Officers', url: '' },
-      { id: 'members', label: 'Members', url: '' },
-      { id: 'presidents', label: 'Presidents', url: '' },
-      { id: 'vp-educations', label: 'VP Educations', url: '' },
-      { id: 'vp-memberships', label: 'VP Memberships', url: '' },
-      { id: 'vp-prs', label: 'VP PRs', url: '' },
-      { id: 'secretaries', label: 'Secretaries', url: '' },
-      { id: 'treasurers', label: 'Treasurers', url: '' },
-      { id: 'sergeant-at-arms', label: 'Sergeant at Arms', url: '' }
+      { id: 'district-officers', label: 'District Officers', url: 'https://drive.google.com/drive/folders/16Yrf26Zmb742xdN0-TwO_2LwWFawBwNM' },
+      { id: 'members', label: 'Members', url: 'https://drive.google.com/drive/folders/1cKEb4bVYT6bg7_wgrQebvjxhYZt15YU4' },
+      { id: 'presidents', label: 'Presidents', url: 'https://drive.google.com/drive/folders/1QXycIMfD9zsflg2aTAB5CvhSlp8VO7hh' },
+      { id: 'vp-educations', label: 'VP Educations', url: 'https://drive.google.com/drive/folders/17b0V-mgYVQ26r78mAhGcMTZAlKyhq_1z' },
+      { id: 'vp-memberships', label: 'VP Memberships', url: 'https://drive.google.com/drive/folders/1OLfuBX99vtcU6Y6E2KuOrvFj5-MgDwDD' },
+      { id: 'vp-prs', label: 'VP Public Relations', url: 'https://drive.google.com/drive/folders/1IPNGR2Z-TC4dJa2MxQgXKfij-RfHigDi' },
+      { id: 'secretaries', label: 'Secretaries', url: 'https://drive.google.com/drive/folders/1lK187yGBsJixi9FWH9fOaOprMvBpc57a' },
+      { id: 'treasurers', label: 'Treasurers', url: 'https://drive.google.com/drive/folders/1JuUBMroiLesMzyPrOt-ur4WyUcpmkV4o' },
+      { id: 'sergeant-at-arms', label: 'Sergeant at Arms', url: 'https://drive.google.com/drive/folders/1BUDkEgHITSR48vzW_JattT2ueJ3yMAF7' }
     ],
     customCanvaUrl: ''
   }
