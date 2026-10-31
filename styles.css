@@ -72,3 +72,43 @@
 @media(max-width:900px){.zoom-panel{grid-template-columns:1fr}.zoom-art{min-height:360px}.zoom-screen{max-width:520px}.zoom-create{grid-template-columns:60px minmax(0,1fr);padding:28px}.zoom-create-mark{width:56px;height:56px}.zoom-create-action{grid-column:2;justify-self:start}}
 @media(max-width:620px){.zoom-role-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.zoom-create{grid-template-columns:1fr;gap:15px}.zoom-create-action{grid-column:1}.zoom-create-mark{display:none}}
 @media(max-width:500px){.zoom-art{padding:20px;min-height:265px}.zoom-screen{border-width:5px}.zoom-copy{padding:32px 25px}.zoom-copy h2{font-size:39px}.zoom-copy>p:not(.eyebrow){font-size:16px}.zoom-explore{margin-top:26px}.zoom-role-grid{grid-template-columns:1fr}.zoom-role-card{min-height:94px}.zoom-create{padding:26px}}
+
+/* Caption prompt library */
+.prompt-section{background:var(--white)}
+.prompt-how{display:flex;flex-wrap:wrap;gap:0;background:var(--blue);color:var(--white);margin:-8px 0 32px}
+.prompt-how span{flex:1;min-width:210px;padding:17px 22px;border-right:1px solid rgba(255,255,255,.24);font:600 12px/1.4 var(--heading)}
+.prompt-how span:last-child{border-right:0}
+.prompt-how b{color:var(--yellow);margin-right:12px}
+.prompt-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:20px}
+.prompt-search{max-width:560px}
+#prompt-count{font:700 11px var(--heading);letter-spacing:.1em;text-transform:uppercase;color:#55717d}
+.prompt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.prompt-card{display:flex;flex-direction:column;min-width:0;border:1px solid #d6e1e4;background:#fff;padding:25px 24px}
+.prompt-card-top{display:flex;justify-content:space-between;gap:15px;font:700 10px/1.3 var(--heading);letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);margin-bottom:25px}
+.prompt-card-top small{font:700 10px var(--heading);color:#78909a}
+.prompt-card h3{font:800 22px/1.2 var(--heading);letter-spacing:-.045em;margin:0 0 10px}
+.prompt-card-description{font-size:15px;color:#58717d;margin:0 0 20px}
+.prompt-details{margin-top:auto;border-top:1px solid #dce5e8;padding-top:14px}
+.prompt-details summary{cursor:pointer;font:700 12px var(--heading);color:var(--maroon);list-style:none}
+.prompt-details summary::-webkit-details-marker{display:none}
+.prompt-details summary::after{content:'+';float:right;font-size:18px;line-height:.8}
+.prompt-details[open] summary::after{content:'−'}
+.prompt-details p{font-size:13px;line-height:1.55;white-space:pre-wrap;color:#375667;background:var(--pale);padding:16px;margin:14px 0 0;overflow-wrap:anywhere}
+.prompt-copy{align-self:flex-start;margin-top:20px;border:0;background:var(--blue);color:#fff;padding:12px 15px;font:700 11px var(--heading)}
+.prompt-copy:hover{background:var(--maroon)}
+.prompt-empty{padding:30px;background:var(--pale);color:#526d79}
+.prompt-footnote{font-size:13px;color:#5c7480;margin:26px 0 0}
+.pr-contact-section{background:var(--maroon);color:#fff;padding:72px 0}
+.pr-contact-inner{display:flex;align-items:center;justify-content:space-between;gap:50px}
+.pr-contact-inner .eyebrow{color:var(--yellow);margin-bottom:16px}
+.pr-contact-inner h2{font:800 clamp(34px,4vw,54px)/1.1 var(--heading);letter-spacing:-.06em;margin:0 0 13px}
+.pr-contact-inner h2 span{color:var(--yellow)}
+.pr-contact-inner p{margin-bottom:0;color:#f1e4e7}
+.pr-contact-action{flex:none}
+.pr-contact-button{background:var(--yellow);color:var(--blue);min-width:300px}
+.pr-contact-button:disabled{cursor:not-allowed;opacity:.75}
+.pr-contact-button:disabled:hover{transform:none}
+.pr-contact-action p{font:600 12px var(--heading);margin:12px 0 0;color:#f1e4e7}
+@media(max-width:1050px){.site-header nav a[href="#wordmark"]{display:none}.prompt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:850px){.site-header nav a[href="#fonts"]{display:none}.pr-contact-inner{align-items:flex-start;flex-direction:column;gap:25px}}
+@media(max-width:620px){.prompt-how{display:block}.prompt-how span{display:block;border-right:0;border-bottom:1px solid rgba(255,255,255,.24)}.prompt-how span:last-child{border-bottom:0}.prompt-toolbar{align-items:stretch;flex-direction:column}.prompt-grid{grid-template-columns:1fr}.pr-contact-button{min-width:0;width:100%}}

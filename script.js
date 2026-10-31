@@ -224,3 +224,103 @@
     returnFocus = null;
   });
 })();
+
+/* Caption prompt library and PR contact */
+(() => {
+  const { captionPrompts, captionPromptRules, prContactEmail } = window.D225_CATALOG;
+  const grid = document.querySelector('#prompt-grid');
+  const search = document.querySelector('#prompt-search');
+  const count = document.querySelector('#prompt-count');
+  const empty = document.querySelector('#prompt-empty');
+  const toast = document.querySelector('#copy-toast');
+  let toastTimer;
+
+  const fullPrompt = item => `${item.prompt}\n\n${captionPromptRules}`;
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+  }
+
+  async function copyPrompt(value) {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(value);
+        return true;
+      }
+    } catch {}
+    const field = document.createElement('textarea');
+    field.value = value;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    document.body.append(field);
+    field.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch {}
+    field.remove();
+    return copied;
+  }
+
+  function makeCard(item, index) {
+    const card = document.createElement('article');
+    card.className = 'prompt-card';
+    const top = document.createElement('div');
+    top.className = 'prompt-card-top';
+    const category = document.createElement('span');
+    category.textContent = item.category;
+    const number = document.createElement('small');
+    number.textContent = String(index + 1).padStart(2, '0');
+    top.append(category, number);
+    const heading = document.createElement('h3');
+    heading.textContent = item.title;
+    const description = document.createElement('p');
+    description.className = 'prompt-card-description';
+    description.textContent = item.summary;
+    const details = document.createElement('details');
+    details.className = 'prompt-details';
+    const summary = document.createElement('summary');
+    summary.textContent = 'Read prompt';
+    const body = document.createElement('p');
+    body.textContent = fullPrompt(item);
+    details.append(summary, body);
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'prompt-copy';
+    button.textContent = 'Copy prompt ↗';
+    button.setAttribute('aria-label', `Copy ${item.title} prompt`);
+    button.addEventListener('click', async () => {
+      if (await copyPrompt(fullPrompt(item))) showToast(`${item.title} prompt copied`);
+      else { details.open = true; showToast('Copy unavailable; select the prompt text above.'); }
+    });
+    card.append(top, heading, description, details, button);
+    return card;
+  }
+
+  function render() {
+    const query = search.value.toLowerCase().trim();
+    const matches = captionPrompts.filter(item =>
+      [item.title, item.category, item.summary, ...(item.tags || [])].join(' ').toLowerCase().includes(query)
+    );
+    grid.replaceChildren(...matches.map(makeCard));
+    count.textContent = `${matches.length} ${matches.length === 1 ? 'prompt' : 'prompts'}`;
+    empty.hidden = matches.length > 0;
+  }
+
+  search.addEventListener('input', render);
+  render();
+
+  const contactButton = document.querySelector('#pr-contact-button');
+  const contactNote = document.querySelector('#pr-contact-note');
+  if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(prContactEmail || '')) {
+    const subject = encodeURIComponent('District 225 PR team request');
+    const body = encodeURIComponent('Club / Area:\nType of PR support:\nEvent or deadline:\nDetails or links:\nYour name and contact:\n');
+    contactButton.disabled = false;
+    contactNote.textContent = 'Opens your email app with a suggested request format.';
+    contactButton.addEventListener('click', () => {
+      window.location.href = `mailto:${prContactEmail}?subject=${subject}&body=${body}`;
+    });
+  }
+})();

@@ -240,5 +240,187 @@ window.D225_CATALOG = {
       { id: 'sergeant-at-arms', label: 'Sergeant at Arms', url: 'https://drive.google.com/drive/folders/1BUDkEgHITSR48vzW_JattT2ueJ3yMAF7' }
     ],
     customCanvaUrl: ''
-  }
+  },
+  captionPromptRules: "Write for [Platform: Instagram/LinkedIn/Facebook] at [Length: short/medium]. Use a warm, specific, professional Toastmasters tone. Use only the facts supplied; never invent names, dates, roles, achievements, quotes, results, or links. Omit optional fields left blank. If an essential fact is missing, mark it [missing detail] rather than guessing. Avoid clichés, excessive emojis, and Markdown asterisks. Include a clear call to action only where relevant and at most three suitable hashtags. Return only the finished caption.",
+  captionPrompts: [
+    {
+      "id": "meeting-announcement",
+      "title": "Meeting Announcement",
+      "category": "Meetings",
+      "summary": "Invite guests to an upcoming club meeting.",
+      "tags": [
+        "meeting",
+        "invitation",
+        "theme"
+      ],
+      "prompt": "Write an inviting caption for [Club Name]'s meeting #[Number] on [Date] at [Time] in [Venue or online link]. Theme: [Theme]. Guests can [registration or contact instructions]. Mention [special segment, optional]. Make the invitation welcoming to first-time guests."
+    },
+    {
+      "id": "speakers-evaluators",
+      "title": "Speakers & Evaluators",
+      "category": "Meetings",
+      "summary": "Introduce prepared speakers and evaluators.",
+      "tags": [
+        "speaker",
+        "evaluator",
+        "speech"
+      ],
+      "prompt": "Introduce the prepared speakers and evaluators for [Club Name]'s meeting on [Date]. Speakers: [Names and speech titles]. Evaluators: [Names and pairings]. Include [meeting theme, optional], [time and venue], and [guest invitation or link]. Keep each person's role accurate."
+    },
+    {
+      "id": "meeting-leaders",
+      "title": "TMOD / GE / TTM",
+      "category": "Meetings",
+      "summary": "Spotlight meeting leaders and the theme.",
+      "tags": [
+        "tmod",
+        "ge",
+        "ttm",
+        "roleplayer"
+      ],
+      "prompt": "Write a caption introducing the meeting role players for [Club Name], meeting #[Number], on [Date]. TMOD: [Name]; General Evaluator: [Name]; Table Topics Master: [Name]. Theme: [Theme]. Add [time, venue or meeting link] and a short invitation to attend. Omit any role that is not supplied."
+    },
+    {
+      "id": "level-completion",
+      "title": "Level Completion",
+      "category": "Pathways",
+      "summary": "Celebrate a member's Pathways level milestone.",
+      "tags": [
+        "pathways",
+        "level",
+        "achievement"
+      ],
+      "prompt": "Celebrate [Member Name] of [Club Name] completing Level [Number] in [Pathway Name]. Include [specific project, lesson, or effort, optional]. Make the recognition personal and accurate; do not invent a quote or award."
+    },
+    {
+      "id": "pathways-completion",
+      "title": "Pathways Completion",
+      "category": "Pathways",
+      "summary": "Recognise completion of a full pathway.",
+      "tags": [
+        "pathway",
+        "education",
+        "milestone"
+      ],
+      "prompt": "Congratulate [Member Name] of [Club Name] for completing the [Pathway Name] pathway. Mention [a verified journey detail or skill gained, optional]. Emphasise the milestone without implying any additional award or title."
+    },
+    {
+      "id": "triple-crown",
+      "title": "Triple Crown",
+      "category": "Recognition",
+      "summary": "Highlight three education awards in one year.",
+      "tags": [
+        "triple crown",
+        "education awards"
+      ],
+      "prompt": "Write a recognition caption for [Member Name] of [Club Name] receiving the Triple Crown. List the three qualifying education awards exactly as provided: [Award 1], [Award 2], [Award 3], earned in [Program Year]. Do not assume which awards qualify or invent their dates."
+    },
+    {
+      "id": "club-award",
+      "title": "Club Award",
+      "category": "Recognition",
+      "summary": "Celebrate a club achievement with the right facts.",
+      "tags": [
+        "club",
+        "award",
+        "recognition"
+      ],
+      "prompt": "Celebrate [Club Name] receiving [Award Name] for [verified achievement or criteria] during [Period]. Mention [club effort or leader names, optional] only if supplied. Focus on what the club actually accomplished."
+    },
+    {
+      "id": "dtm",
+      "title": "Distinguished Toastmaster",
+      "category": "Recognition",
+      "summary": "Honour a member's DTM milestone.",
+      "tags": [
+        "dtm",
+        "distinguished toastmaster"
+      ],
+      "prompt": "Congratulate [Member Name] of [Club Name] on earning the Distinguished Toastmaster (DTM) designation. Include [verified journey detail or personal reflection, optional]. Keep the tone sincere and do not invent years of service, speeches, or leadership roles."
+    },
+    {
+      "id": "new-member",
+      "title": "New Member Welcome",
+      "category": "Community",
+      "summary": "Welcome someone to the club.",
+      "tags": [
+        "welcome",
+        "member"
+      ],
+      "prompt": "Welcome [Member Name] to [Club Name]. Include [one approved personal interest or reason for joining, optional]. Make it warm and inclusive, and invite the community to say hello without inventing details about the person."
+    },
+    {
+      "id": "birthday",
+      "title": "Birthday Wishes",
+      "category": "Community",
+      "summary": "Write a warm birthday post.",
+      "tags": [
+        "birthday",
+        "wishes"
+      ],
+      "prompt": "Write a birthday caption for [Member Name] from [Club or District Name]. Include [personal note, optional]. Keep it warm and concise. Do not mention office or role unless I explicitly provide it: [Role, optional]."
+    },
+    {
+      "id": "role-winner",
+      "title": "Role-Player Winner",
+      "category": "Recognition",
+      "summary": "Recognise a meeting role award.",
+      "tags": [
+        "best evaluator",
+        "timer",
+        "grammarian",
+        "winner"
+      ],
+      "prompt": "Congratulate [Member Name] of [Club Name] for [Exact Award or Role] at meeting #[Number] on [Date]. Include [one verified contribution, optional]. Use the exact award wording and avoid implying a contest result."
+    },
+    {
+      "id": "agenda",
+      "title": "Meeting Agenda",
+      "category": "Meetings",
+      "summary": "Share the programme before a meeting.",
+      "tags": [
+        "agenda",
+        "schedule"
+      ],
+      "prompt": "Write a caption to accompany the agenda for [Club Name]'s meeting #[Number] on [Date] at [Time] in [Venue or online]. Theme: [Theme]. Highlight [one or two confirmed agenda items]. Invite guests using [registration or contact detail]. Do not invent speakers or timings."
+    },
+    {
+      "id": "mom",
+      "title": "Minutes of Meeting",
+      "category": "Meetings",
+      "summary": "Summarise approved meeting highlights.",
+      "tags": [
+        "mom",
+        "minutes",
+        "recap"
+      ],
+      "prompt": "Write a concise public recap of [Club Name]'s meeting #[Number] held on [Date]. Approved highlights: [Highlights]. Approved decisions or next steps: [Items, optional]. Do not reveal confidential minutes, private member information, or unapproved quotes."
+    },
+    {
+      "id": "club-contest",
+      "title": "Club Contest",
+      "category": "Contests",
+      "summary": "Announce results, participants, or officials.",
+      "tags": [
+        "contest",
+        "winner",
+        "participant",
+        "official"
+      ],
+      "prompt": "Write a caption for [Contest Type] at [Club Name] on [Date]. Purpose: [announce event / thank participants and officials / announce results]. Winners and ranks: [Exact Names and Ranks, if applicable]. Participants: [Names, optional]. Officials: [Names and Roles, optional]. Verify every title and placement; do not invent rankings."
+    },
+    {
+      "id": "testimonial",
+      "title": "Member Testimonial",
+      "category": "Community",
+      "summary": "Share an approved member story.",
+      "tags": [
+        "testimonial",
+        "quote",
+        "story"
+      ],
+      "prompt": "Write a caption around this approved member testimonial: [Exact Quote], attributed to [Member Name, Club]. Add [approved context, optional] and [call to action, optional]. Preserve the meaning of the quote, do not fabricate additional words, and use it only if the member has approved publication."
+    }
+  ],
+  prContactEmail: ''
 };

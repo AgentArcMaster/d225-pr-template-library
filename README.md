@@ -45,6 +45,12 @@ Use a unique `id` for every design. Set `role` and descriptive `tags` for specif
 | Club Contest | `club-contest` |
 | Testimonials | `testimonials` |
 
+## Caption prompts and PR contact
+
+The **Caption Prompt Library** is defined in `catalog.js` under `captionPrompts`. Add or edit an entry there to change its title, category, search tags, and prompt text. `captionPromptRules` contains the common fact-checking and tone instructions appended to every copied prompt.
+
+The PR contact button at the end of the page remains disabled while `prContactEmail` is empty. Set it to the team's address in `catalog.js` to enable a prefilled `mailto:` request. This opens the visitor's email application; it does not send email automatically. An in-site submission form would require a backend or email service.
+
 ## Preview locally
 
 Open `index.html` in a browser. For a local server, run `python -m http.server 8000` in this folder and visit `http://localhost:8000/`.
