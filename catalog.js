@@ -226,5 +226,19 @@ window.D225_CATALOG = {
       image: 'assets/meeting-leaders-07.png',
       canvaUrl: 'https://canva.link/xsx8h9jv8pfyhso'
     }
-  ]
+  ],
+  zoom: {
+    roles: [
+      { id: 'district-officers', label: 'District Officers', url: '' },
+      { id: 'members', label: 'Members', url: '' },
+      { id: 'presidents', label: 'Presidents', url: '' },
+      { id: 'vp-educations', label: 'VP Educations', url: '' },
+      { id: 'vp-memberships', label: 'VP Memberships', url: '' },
+      { id: 'vp-prs', label: 'VP PRs', url: '' },
+      { id: 'secretaries', label: 'Secretaries', url: '' },
+      { id: 'treasurers', label: 'Treasurers', url: '' },
+      { id: 'sergeant-at-arms', label: 'Sergeant at Arms', url: '' }
+    ],
+    customCanvaUrl: ''
+  }
 };

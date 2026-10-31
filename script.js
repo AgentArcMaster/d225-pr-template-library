@@ -141,7 +141,7 @@
   document.querySelectorAll('[data-query]').forEach(button => button.addEventListener('click', () => { search.value = button.dataset.query; render(); search.focus(); }));
   document.querySelector('#clear-search').addEventListener('click', () => { search.value = ''; document.querySelector('[data-filter="All"]').click(); search.focus(); });
   document.addEventListener('keydown', event => {
-    if (event.key === '/' && !dialog.open && !/input|textarea/i.test(document.activeElement.tagName)) { event.preventDefault(); search.focus(); }
+    if (event.key === '/' && !dialog.open && !document.querySelector('#zoom-dialog')?.open && !/input|textarea/i.test(document.activeElement.tagName)) { event.preventDefault(); search.focus(); }
   });
   document.querySelector('#dialog-close').addEventListener('click', () => dialog.close());
   document.querySelector('#design-back').addEventListener('click', () => {
@@ -167,4 +167,60 @@
     const item = published.find(design => design.id === initial.slice('design-'.length));
     if (item) openDesign(item);
   }
+})();
+
+(() => {
+  const zoom = window.D225_CATALOG.zoom;
+  const dialog = document.querySelector('#zoom-dialog');
+  const grid = document.querySelector('#zoom-role-grid');
+  const explore = document.querySelector('#zoom-explore');
+  const close = document.querySelector('#zoom-dialog-close');
+  const customLink = document.querySelector('#zoom-custom-link');
+  const customPending = document.querySelector('#zoom-custom-pending');
+  let returnFocus = null;
+
+  function allowedUrl(value, hosts) {
+    try {
+      const url = new URL(value);
+      return url.protocol === 'https:' && hosts.includes(url.hostname);
+    } catch { return false; }
+  }
+
+  zoom.roles.forEach(role => {
+    const active = allowedUrl(role.url, ['drive.google.com', 'docs.google.com']);
+    const card = document.createElement(active ? 'a' : 'button');
+    card.className = 'zoom-role-card';
+    if (active) {
+      card.href = role.url;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+    } else {
+      card.type = 'button';
+      card.disabled = true;
+    }
+    const title = document.createElement('strong');
+    title.textContent = role.label;
+    const status = document.createElement('span');
+    status.textContent = active ? 'Open Drive collection ↗' : 'Drive link coming soon';
+    card.append(title, status);
+    grid.append(card);
+  });
+
+  if (allowedUrl(zoom.customCanvaUrl, ['canva.link', 'canva.com', 'www.canva.com'])) {
+    customLink.href = zoom.customCanvaUrl;
+    customLink.hidden = false;
+    customPending.hidden = true;
+  }
+
+  explore.addEventListener('click', () => {
+    returnFocus = document.activeElement;
+    dialog.showModal();
+    close.focus();
+  });
+  close.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener('close', () => {
+    if (returnFocus?.isConnected) returnFocus.focus();
+    returnFocus = null;
+  });
 })();
