@@ -165,6 +165,66 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/meeting-leaders-01.png',
       canvaUrl: 'https://canva.link/6wwtpkp9wr42220'
+    },
+    {
+      id: 'meeting-leaders-02',
+      category: 'meeting-leaders',
+      title: 'TMOD / GE / TTM — Design 2',
+      role: 'Toastmaster of the Day / General Evaluator / Table Topics Master',
+      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players'],
+      format: 'Square',
+      image: 'assets/meeting-leaders-02.png',
+      canvaUrl: 'https://canva.link/b1mk0m0nxpvhkpr'
+    },
+    {
+      id: 'meeting-leaders-03',
+      category: 'meeting-leaders',
+      title: 'TMOD / GE / TTM — Design 3',
+      role: 'Toastmaster of the Day',
+      tags: ['tmod', 'toastmaster of the day', 'meeting leader', 'individual role player'],
+      format: 'Square',
+      image: 'assets/meeting-leaders-03.png',
+      canvaUrl: 'https://canva.link/yduf5nw6dysdwt9'
+    },
+    {
+      id: 'meeting-leaders-04',
+      category: 'meeting-leaders',
+      title: 'TMOD / GE / TTM — Design 4',
+      role: 'Table Topics Master / General Evaluator',
+      tags: ['ttm', 'table topics master', 'ge', 'general evaluator', 'meeting role players'],
+      format: 'Square',
+      image: 'assets/meeting-leaders-04.png',
+      canvaUrl: 'https://canva.link/9tb12wmroq0zwhd'
+    },
+    {
+      id: 'meeting-leaders-05',
+      category: 'meeting-leaders',
+      title: 'TMOD / GE / TTM — Design 5',
+      role: 'Toastmaster of the Day / General Evaluator / Table Topics Master',
+      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players'],
+      format: 'Square',
+      image: 'assets/meeting-leaders-05.png',
+      canvaUrl: 'https://canva.link/4mdf9k0tq972ryp'
+    },
+    {
+      id: 'meeting-leaders-06',
+      category: 'meeting-leaders',
+      title: 'TMOD / GE / TTM — Design 6',
+      role: 'Toastmaster of the Day / General Evaluator / Table Topics Master',
+      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players'],
+      format: 'Square',
+      image: 'assets/meeting-leaders-06.png',
+      canvaUrl: 'https://canva.link/fb2unk2muvnnu4i'
+    },
+    {
+      id: 'meeting-leaders-07',
+      category: 'meeting-leaders',
+      title: 'TMOD / GE / TTM — Design 7',
+      role: 'Toastmaster of the Day / General Evaluator / Table Topics Master',
+      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players'],
+      format: 'Square',
+      image: 'assets/meeting-leaders-07.png',
+      canvaUrl: 'https://canva.link/xsx8h9jv8pfyhso'
     }
   ]
 };
