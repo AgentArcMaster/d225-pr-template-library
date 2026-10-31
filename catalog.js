@@ -155,6 +155,16 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/speakers-evaluators-05.png',
       canvaUrl: 'https://canva.link/gnlyh7ri8bihcot'
+    },
+    {
+      id: 'meeting-leaders-01',
+      category: 'meeting-leaders',
+      title: 'TMOD / GE / TTM — Design 1',
+      role: 'Table Topics Master / General Evaluator',
+      tags: ['table topics master', 'ttm', 'general evaluator', 'ge', 'meeting role players', 'meeting poster'],
+      format: 'Square',
+      image: 'assets/meeting-leaders-01.png',
+      canvaUrl: 'https://canva.link/6wwtpkp9wr42220'
     }
   ]
 };
