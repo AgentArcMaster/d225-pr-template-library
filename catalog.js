@@ -422,5 +422,5 @@ window.D225_CATALOG = {
       "prompt": "Write a caption around this approved member testimonial: [Exact Quote], attributed to [Member Name, Club]. Add [approved context, optional] and [call to action, optional]. Preserve the meaning of the quote, do not fabricate additional words, and use it only if the member has approved publication."
     }
   ],
-  prContactEmail: ''
+  prContactEmails: ['dr.raunakdtm@gmail.com', 'ankitkp31@gmail.com']
 };

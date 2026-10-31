@@ -227,7 +227,7 @@
 
 /* Caption prompt library and PR contact */
 (() => {
-  const { captionPrompts, captionPromptRules, prContactEmail } = window.D225_CATALOG;
+  const { captionPrompts, captionPromptRules, prContactEmails } = window.D225_CATALOG;
   const grid = document.querySelector('#prompt-grid');
   const search = document.querySelector('#prompt-search');
   const count = document.querySelector('#prompt-count');
@@ -314,13 +314,15 @@
 
   const contactButton = document.querySelector('#pr-contact-button');
   const contactNote = document.querySelector('#pr-contact-note');
-  if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(prContactEmail || '')) {
+  const recipients = Array.isArray(prContactEmails) ? prContactEmails : [];
+  const validEmail = value => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value);
+  if (recipients.length && recipients.every(validEmail)) {
     const subject = encodeURIComponent('District 225 PR team request');
     const body = encodeURIComponent('Club / Area:\nType of PR support:\nEvent or deadline:\nDetails or links:\nYour name and contact:\n');
     contactButton.disabled = false;
-    contactNote.textContent = 'Opens your email app with a suggested request format.';
+    contactNote.textContent = 'Opens your email app addressed to the PR team.';
     contactButton.addEventListener('click', () => {
-      window.location.href = `mailto:${prContactEmail}?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:${recipients.join(',')}?subject=${subject}&body=${body}`;
     });
   }
 })();
