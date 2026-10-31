@@ -333,10 +333,11 @@
   const slides = [...carousel.querySelectorAll('.hero-slide')];
   const dots = [...carousel.querySelectorAll('[data-hero-slide]')];
   const count = document.querySelector('#hero-slide-count');
+  const autoplay = document.querySelector('#hero-autoplay');
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   let active = 0;
   let timer = null;
-  let manuallyChanged = false;
+  let paused = motionPreference.matches;
 
   function showSlide(next) {
     active = (next + slides.length) % slides.length;
@@ -351,34 +352,36 @@
   }
 
   function stopRotation() {
-    if (timer) clearInterval(timer);
+    if (timer) clearTimeout(timer);
     timer = null;
   }
 
   function startRotation() {
-    if (!timer && !manuallyChanged && !motionPreference.matches && !document.hidden && !carousel.matches(':hover') && !carousel.contains(document.activeElement)) {
-      timer = setInterval(() => showSlide(active + 1), 6500);
-    }
+    stopRotation();
+    if (paused || motionPreference.matches || document.hidden) return;
+    timer = setTimeout(() => { showSlide(active + 1); startRotation(); }, 5500);
+  }
+
+  function updateAutoplay() {
+    autoplay.textContent = paused ? '▶' : 'Ⅱ';
+    autoplay.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+    autoplay.setAttribute('aria-pressed', String(paused));
+    autoplay.disabled = motionPreference.matches;
   }
 
   function chooseSlide(next) {
-    manuallyChanged = true;
-    stopRotation();
     showSlide(next);
+    startRotation();
   }
 
   document.querySelector('#hero-prev').addEventListener('click', () => chooseSlide(active - 1));
   document.querySelector('#hero-next').addEventListener('click', () => chooseSlide(active + 1));
   dots.forEach((dot, index) => dot.addEventListener('click', () => chooseSlide(index)));
-  carousel.addEventListener('mouseenter', stopRotation);
-  carousel.addEventListener('mouseleave', startRotation);
-  carousel.addEventListener('focusin', stopRotation);
-  carousel.addEventListener('focusout', event => {
-    if (!carousel.contains(event.relatedTarget)) startRotation();
-  });
+  autoplay.addEventListener('click', () => { paused = !paused; updateAutoplay(); startRotation(); });
   document.addEventListener('visibilitychange', () => { if (document.hidden) stopRotation(); else startRotation(); });
-  motionPreference.addEventListener?.('change', () => { if (motionPreference.matches) stopRotation(); else startRotation(); });
+  motionPreference.addEventListener?.('change', () => { paused = motionPreference.matches; updateAutoplay(); startRotation(); });
   showSlide(0);
+  updateAutoplay();
   startRotation();
 
   if (!motionPreference.matches && 'IntersectionObserver' in window) {
@@ -399,3 +402,4 @@
     });
   }
 })();
+
