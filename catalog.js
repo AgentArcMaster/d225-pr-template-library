@@ -17,7 +17,7 @@ window.D225_CATALOG = {
     { id: 'birthday', title: 'Happy Birthday', tag: 'Community', keywords: 'birthday celebration wishes', mark: '09' },
     { id: 'role-player-winners', title: 'Winners — Role Players', tag: 'Recognition', keywords: 'best role player award meeting timer grammarian ah counter ah-counter sergeant at arms saa techmaster ballot counter vote counter quizmaster individual', mark: '10' },
     { id: 'agenda', title: 'Agenda & MoM', tag: 'Meetings', keywords: 'agenda mom minutes of meeting meeting minutes program schedule', details: 'Meeting agenda and Minutes of Meeting (MoM) designs.', mark: '11' },
-    { id: 'club-contest', title: 'Club Contest', tag: 'Contests', keywords: 'winner participant contest officials humorous evaluation international table topics', details: 'Templates for contest winners, participants, and contest officials.', mark: '12' },
+    { id: 'club-contest', title: 'Speech Contests', tag: 'Contests', keywords: 'club area division district contest winner participant contest officials humorous evaluation international table topics', details: 'Templates for club, area, division, and district contest winners, participants, and officials.', mark: '12' },
     { id: 'testimonials', title: 'Testimonials', tag: 'Community', keywords: 'member stories quotes experience', mark: '13' }
   ],
   templates: [
@@ -398,16 +398,20 @@ window.D225_CATALOG = {
     },
     {
       "id": "club-contest",
-      "title": "Club Contest",
+      "title": "Speech Contest",
       "category": "Contests",
       "summary": "Announce results, participants, or officials.",
       "tags": [
         "contest",
         "winner",
         "participant",
-        "official"
+        "official",
+        "club",
+        "area",
+        "division",
+        "district"
       ],
-      "prompt": "Write a caption for [Contest Type] at [Club Name] on [Date]. Purpose: [announce event / thank participants and officials / announce results]. Winners and ranks: [Exact Names and Ranks, if applicable]. Participants: [Names, optional]. Officials: [Names and Roles, optional]. Verify every title and placement; do not invent rankings."
+      "prompt": "Write a caption for [Contest Type] at the [Club / Area / Division / District Name] level on [Date]. Purpose: [announce event / thank participants and officials / announce results]. Winners and ranks: [Exact Names and Ranks, if applicable]. Participants: [Names, optional]. Officials: [Names and Roles, optional]. Verify every title and placement; do not invent rankings."
     },
     {
       "id": "testimonial",
