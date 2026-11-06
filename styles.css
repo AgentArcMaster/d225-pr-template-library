@@ -162,3 +162,13 @@
 @media(max-width:500px){.hero-carousel-controls{padding:0 10px;gap:6px}.hero-carousel-controls>button{width:31px;height:31px}.hero-carousel-dots{gap:4px}.hero-carousel-dots button{width:14px}.hero-carousel-dots button[aria-pressed="true"]{width:20px}#hero-slide-count{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.hero-slide,.hero-carousel-controls button,.hero-carousel-dots button,.motion-reveal,.button,.prompt-copy,.filter,.swatch,.prompt-card,.principle-grid article,.template-item{animation:none!important;transition:none!important}.motion-reveal{opacity:1;transform:none}}
 
+
+/* Cross-collection role discovery */
+.search-tip{display:flex;align-items:center;gap:14px;margin:18px 0 0;padding:15px 17px;background:#fff9dc;border:1px solid #e4d387;border-left:4px solid var(--maroon);box-shadow:0 8px 22px rgba(0,65,101,.09)}
+.search-tip[hidden]{display:none}
+.search-tip-icon{color:var(--maroon);font-size:20px;line-height:1}
+.search-tip p{flex:1;margin:0;color:var(--blue);font-size:13px;line-height:1.45}
+.search-tip button{border:0;background:transparent;color:var(--maroon);font:700 11px var(--heading);cursor:pointer}
+#search-tip-action{text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+#search-tip-close{font-size:22px;line-height:1;padding:4px 6px}
+@media(max-width:620px){.search-tip{flex-wrap:wrap;gap:8px}.search-tip p{flex-basis:calc(100% - 52px)}#search-tip-action{margin-left:29px}}

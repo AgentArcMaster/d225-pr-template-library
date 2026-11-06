@@ -4,6 +4,10 @@
   const search = document.querySelector('#template-search');
   const count = document.querySelector('#results-count');
   const empty = document.querySelector('#empty-search');
+  const searchTip = document.querySelector('#search-tip');
+  const searchTipText = document.querySelector('#search-tip-text');
+  const searchTipAction = document.querySelector('#search-tip-action');
+  let dismissedTipQuery = '';
   const dialog = document.querySelector('#collection-dialog');
   const collectionView = document.querySelector('#collection-view');
   const designView = document.querySelector('#design-view');
@@ -122,6 +126,17 @@
     });
     count.textContent = `${matches.length} ${matches.length === 1 ? 'collection' : 'collections'}`;
     empty.hidden = matches.length !== 0;
+    const contestRole = /\b(cc|cj|contest chair|chief judge|contestants?|contest officials?)\b/.test(query);
+    const meetingRole = /\b(tmod|ge|ttm|toastmaster of the day|general evaluator|table topics master)\b/.test(query);
+    const suggestedCollection = contestRole ? 'meeting-leaders' : meetingRole ? 'club-contest' : '';
+    searchTip.hidden = !suggestedCollection || dismissedTipQuery === query;
+    if (!searchTip.hidden) {
+      searchTipText.textContent = contestRole
+        ? 'Looking for a Contest Chair or Chief Judge poster? TMOD / GE / TTM designs can be personalised for CC / CJ too.'
+        : 'Looking for a meeting leader poster? Some Speech Contests layouts can be personalised for TMOD / GE / TTM too.';
+      searchTipAction.textContent = contestRole ? 'Explore meeting-role designs ↗' : 'Explore contest designs ↗';
+      searchTipAction.dataset.collection = suggestedCollection;
+    }
   }
 
   function openCollection(id) {
@@ -138,6 +153,8 @@
     render();
   }));
   search.addEventListener('input', render);
+  searchTipAction.addEventListener('click', () => openCollection(searchTipAction.dataset.collection));
+  document.querySelector('#search-tip-close').addEventListener('click', () => { dismissedTipQuery = normalize(search.value); searchTip.hidden = true; });
   document.querySelectorAll('[data-query]').forEach(button => button.addEventListener('click', () => { search.value = button.dataset.query; render(); search.focus(); }));
   document.querySelector('#clear-search').addEventListener('click', () => { search.value = ''; document.querySelector('[data-filter="All"]').click(); search.focus(); });
   document.addEventListener('keydown', event => {

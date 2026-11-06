@@ -9,7 +9,7 @@ window.D225_CATALOG = {
     { id: 'level-completion', title: 'Level Completion', tag: 'Pathways', keywords: 'level 1 2 3 4 5 achievement education', note: 'More designs dropping soon.', mark: '01' },
     { id: 'pathways-completion', title: 'Pathways Completion', tag: 'Pathways', keywords: 'path completion educational journey', note: 'More designs dropping soon.', mark: '02' },
     { id: 'speakers-evaluators', title: 'Speakers & Evaluators', tag: 'Meetings', keywords: 'speaker evaluator speech evaluation', note: 'More designs dropping soon.', mark: '03' },
-    { id: 'meeting-leaders', title: 'TMOD / GE / TTM', tag: 'Meetings', keywords: 'toastmaster of the day general evaluator table topics master roles individual', note: 'More designs dropping soon.', mark: '04' },
+    { id: 'meeting-leaders', title: 'TMOD / GE / TTM', tag: 'Meetings', keywords: 'toastmaster of the day general evaluator table topics master roles individual tmod ge ttm contest chair chief judge cc cj', note: 'More designs dropping soon.', mark: '04' },
     { id: 'triple-crown', title: 'Triple Crown', tag: 'Recognition', keywords: 'education award triple crown', mark: '05' },
     { id: 'club-awards', title: 'Club Awards', tag: 'Recognition', keywords: 'club award achievement distinguished', mark: '06' },
     { id: 'dtm', title: 'DTM', tag: 'Recognition', keywords: 'distinguished toastmaster milestone', mark: '07' },
@@ -17,7 +17,7 @@ window.D225_CATALOG = {
     { id: 'birthday', title: 'Happy Birthday', tag: 'Community', keywords: 'birthday celebration wishes', mark: '09' },
     { id: 'role-player-winners', title: 'Winners — Role Players', tag: 'Recognition', keywords: 'best role player award meeting timer grammarian ah counter ah-counter sergeant at arms saa techmaster ballot counter vote counter quizmaster individual', mark: '10' },
     { id: 'agenda', title: 'Agenda & MoM', tag: 'Meetings', keywords: 'agenda mom minutes of meeting meeting minutes program schedule', details: 'Meeting agenda and Minutes of Meeting (MoM) designs.', mark: '11' },
-    { id: 'club-contest', title: 'Speech Contests', tag: 'Contests', keywords: 'club area division district contest winner participant contest officials humorous evaluation international table topics', details: 'Templates for club, area, division, and district contest winners, participants, and officials.', mark: '12' },
+    { id: 'club-contest', title: 'Speech Contests', tag: 'Contests', keywords: 'club area division district contest winner participant contestants contestant contest officials contest chair chief judge cc cj humorous evaluation international table topics tmod ge ttm toastmaster of the day general evaluator table topics master', details: 'Templates for club, area, division, and district contest winners, participants, and officials.', mark: '12' },
     { id: 'testimonials', title: 'Testimonials', tag: 'Community', keywords: 'member stories quotes experience', mark: '13' }
   ],
   templates: [
@@ -161,7 +161,7 @@ window.D225_CATALOG = {
       category: 'meeting-leaders',
       title: 'TMOD / GE / TTM — Design 1',
       role: 'Table Topics Master / General Evaluator',
-      tags: ['table topics master', 'ttm', 'general evaluator', 'ge', 'meeting role players', 'meeting poster'],
+      tags: ['table topics master', 'ttm', 'general evaluator', 'ge', 'meeting role players', 'meeting poster', 'contest chair', 'chief judge', 'cc', 'cj', 'cc cj'],
       format: 'Square',
       image: 'assets/meeting-leaders-01.png',
       canvaUrl: 'https://canva.link/6wwtpkp9wr42220'
@@ -171,7 +171,7 @@ window.D225_CATALOG = {
       category: 'meeting-leaders',
       title: 'TMOD / GE / TTM — Design 2',
       role: 'Toastmaster of the Day / General Evaluator / Table Topics Master',
-      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players'],
+      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players', 'contest chair', 'chief judge', 'cc', 'cj', 'cc cj'],
       format: 'Square',
       image: 'assets/meeting-leaders-02.png',
       canvaUrl: 'https://canva.link/b1mk0m0nxpvhkpr'
@@ -181,7 +181,7 @@ window.D225_CATALOG = {
       category: 'meeting-leaders',
       title: 'TMOD / GE / TTM — Design 3',
       role: 'Toastmaster of the Day',
-      tags: ['tmod', 'toastmaster of the day', 'meeting leader', 'individual role player'],
+      tags: ['tmod', 'toastmaster of the day', 'meeting leader', 'individual role player', 'contest chair', 'chief judge', 'cc', 'cj', 'cc cj'],
       format: 'Square',
       image: 'assets/meeting-leaders-03.png',
       canvaUrl: 'https://canva.link/yduf5nw6dysdwt9'
@@ -191,7 +191,7 @@ window.D225_CATALOG = {
       category: 'meeting-leaders',
       title: 'TMOD / GE / TTM — Design 4',
       role: 'Table Topics Master / General Evaluator',
-      tags: ['ttm', 'table topics master', 'ge', 'general evaluator', 'meeting role players'],
+      tags: ['ttm', 'table topics master', 'ge', 'general evaluator', 'meeting role players', 'contest chair', 'chief judge', 'cc', 'cj', 'cc cj'],
       format: 'Square',
       image: 'assets/meeting-leaders-04.png',
       canvaUrl: 'https://canva.link/9tb12wmroq0zwhd'
@@ -201,7 +201,7 @@ window.D225_CATALOG = {
       category: 'meeting-leaders',
       title: 'TMOD / GE / TTM — Design 5',
       role: 'Toastmaster of the Day / General Evaluator / Table Topics Master',
-      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players'],
+      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players', 'contest chair', 'chief judge', 'cc', 'cj', 'cc cj'],
       format: 'Square',
       image: 'assets/meeting-leaders-05.png',
       canvaUrl: 'https://canva.link/4mdf9k0tq972ryp'
@@ -211,7 +211,7 @@ window.D225_CATALOG = {
       category: 'meeting-leaders',
       title: 'TMOD / GE / TTM — Design 6',
       role: 'Toastmaster of the Day / General Evaluator / Table Topics Master',
-      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players'],
+      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players', 'contest chair', 'chief judge', 'cc', 'cj', 'cc cj'],
       format: 'Square',
       image: 'assets/meeting-leaders-06.png',
       canvaUrl: 'https://canva.link/fb2unk2muvnnu4i'
@@ -221,7 +221,7 @@ window.D225_CATALOG = {
       category: 'meeting-leaders',
       title: 'TMOD / GE / TTM — Design 7',
       role: 'Toastmaster of the Day / General Evaluator / Table Topics Master',
-      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players'],
+      tags: ['tmod', 'toastmaster of the day', 'ge', 'general evaluator', 'ttm', 'table topics master', 'meeting role players', 'contest chair', 'chief judge', 'cc', 'cj', 'cc cj'],
       format: 'Square',
       image: 'assets/meeting-leaders-07.png',
       canvaUrl: 'https://canva.link/xsx8h9jv8pfyhso'
@@ -230,7 +230,7 @@ window.D225_CATALOG = {
       id: 'club-contest-01',
       category: 'club-contest',
       title: 'Speech Contests — Design 1',
-      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official', 'chief judge', 'contest chair', 'cc', 'cj', 'cc cj', 'contestant', 'contestants', 'tmod', 'ge', 'ttm', 'toastmaster of the day', 'general evaluator', 'table topics master'],
       format: 'Square',
       image: 'assets/club-contest-01.png',
       canvaUrl: 'https://canva.link/cnep0qfsle1rwwa'
@@ -239,7 +239,7 @@ window.D225_CATALOG = {
       id: 'club-contest-02',
       category: 'club-contest',
       title: 'Speech Contests — Design 2',
-      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official', 'chief judge', 'contest chair', 'cc', 'cj', 'cc cj', 'contestant', 'contestants', 'tmod', 'ge', 'ttm', 'toastmaster of the day', 'general evaluator', 'table topics master'],
       format: 'Square',
       image: 'assets/club-contest-02.png',
       canvaUrl: 'https://canva.link/54butpawl7us0f1'
@@ -248,7 +248,7 @@ window.D225_CATALOG = {
       id: 'club-contest-03',
       category: 'club-contest',
       title: 'Speech Contests — Design 3',
-      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official', 'chief judge', 'contest chair', 'cc', 'cj', 'cc cj', 'contestant', 'contestants', 'tmod', 'ge', 'ttm', 'toastmaster of the day', 'general evaluator', 'table topics master'],
       format: 'Square',
       image: 'assets/club-contest-03.png',
       canvaUrl: 'https://canva.link/zxxgsx4hslak756'
@@ -257,7 +257,7 @@ window.D225_CATALOG = {
       id: 'club-contest-04',
       category: 'club-contest',
       title: 'Speech Contests — Design 4',
-      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official', 'chief judge', 'contest chair', 'cc', 'cj', 'cc cj', 'contestant', 'contestants', 'tmod', 'ge', 'ttm', 'toastmaster of the day', 'general evaluator', 'table topics master'],
       format: 'Square',
       image: 'assets/club-contest-04.png',
       canvaUrl: 'https://canva.link/1w5ifreexyouftc'
@@ -266,7 +266,7 @@ window.D225_CATALOG = {
       id: 'club-contest-05',
       category: 'club-contest',
       title: 'Speech Contests — Design 5',
-      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official', 'chief judge', 'contest chair', 'cc', 'cj', 'cc cj', 'contestant', 'contestants', 'tmod', 'ge', 'ttm', 'toastmaster of the day', 'general evaluator', 'table topics master'],
       format: 'Square',
       image: 'assets/club-contest-05.png',
       canvaUrl: 'https://canva.link/naxtsdwcfvrobqa'
@@ -275,7 +275,7 @@ window.D225_CATALOG = {
       id: 'club-contest-06',
       category: 'club-contest',
       title: 'Speech Contests — Design 6',
-      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official', 'chief judge', 'contest chair', 'cc', 'cj', 'cc cj', 'contestant', 'contestants', 'tmod', 'ge', 'ttm', 'toastmaster of the day', 'general evaluator', 'table topics master'],
       format: 'Square',
       image: 'assets/club-contest-06.png',
       canvaUrl: 'https://canva.link/axp0f3s1zkzlpbm'
@@ -460,6 +460,11 @@ window.D225_CATALOG = {
         "winner",
         "participant",
         "official",
+        "chief judge",
+        "contest chair",
+        "cc",
+        "cj",
+        "contestants",
         "club",
         "area",
         "division",
