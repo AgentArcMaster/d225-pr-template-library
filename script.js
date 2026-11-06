@@ -21,6 +21,9 @@
   let returnFocus = null;
 
   const normalize = value => String(value || '').toLowerCase().trim();
+  const matchesSearch = (text, query) => ['cc', 'cj', 'ge'].includes(query)
+    ? new RegExp(`\\b${query}\\b`).test(text)
+    : text.includes(query);
   const validCanvaUrl = value => {
     try { const url = new URL(value); return url.protocol === 'https:' && ['canva.com', 'www.canva.com', 'canva.link'].includes(url.hostname); }
     catch { return false; }
@@ -69,7 +72,7 @@
     document.querySelector('#dialog-title').textContent = category.title;
     const allDesigns = templateFor(id);
     const query = normalize(search.value);
-    const matchingDesigns = query ? allDesigns.filter(item => searchableTemplate(item).includes(query)) : [];
+    const matchingDesigns = query ? allDesigns.filter(item => matchesSearch(searchableTemplate(item), query)) : [];
     const available = matchingDesigns.length ? matchingDesigns : allDesigns;
     document.querySelector('#dialog-description').textContent = available.length
       ? 'Choose a design to see its full preview and Canva editing option.'
@@ -109,7 +112,7 @@
     const matches = categories.filter(item => {
       const inFilter = activeFilter === 'All' || item.tag === activeFilter;
       const searchable = [item.title, item.tag, item.keywords, ...templateFor(item.id).map(searchableTemplate)].join(' ').toLowerCase();
-      return inFilter && (!query || searchable.includes(query));
+      return inFilter && (!query || matchesSearch(searchable, query));
     });
     grid.replaceChildren();
     matches.forEach(item => {
