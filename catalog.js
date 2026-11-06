@@ -225,6 +225,60 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/meeting-leaders-07.png',
       canvaUrl: 'https://canva.link/xsx8h9jv8pfyhso'
+    },
+    {
+      id: 'club-contest-01',
+      category: 'club-contest',
+      title: 'Speech Contests — Design 1',
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      format: 'Square',
+      image: 'assets/club-contest-01.png',
+      canvaUrl: 'https://canva.link/cnep0qfsle1rwwa'
+    },
+    {
+      id: 'club-contest-02',
+      category: 'club-contest',
+      title: 'Speech Contests — Design 2',
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      format: 'Square',
+      image: 'assets/club-contest-02.png',
+      canvaUrl: 'https://canva.link/54butpawl7us0f1'
+    },
+    {
+      id: 'club-contest-03',
+      category: 'club-contest',
+      title: 'Speech Contests — Design 3',
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      format: 'Square',
+      image: 'assets/club-contest-03.png',
+      canvaUrl: 'https://canva.link/zxxgsx4hslak756'
+    },
+    {
+      id: 'club-contest-04',
+      category: 'club-contest',
+      title: 'Speech Contests — Design 4',
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      format: 'Square',
+      image: 'assets/club-contest-04.png',
+      canvaUrl: 'https://canva.link/1w5ifreexyouftc'
+    },
+    {
+      id: 'club-contest-05',
+      category: 'club-contest',
+      title: 'Speech Contests — Design 5',
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      format: 'Square',
+      image: 'assets/club-contest-05.png',
+      canvaUrl: 'https://canva.link/naxtsdwcfvrobqa'
+    },
+    {
+      id: 'club-contest-06',
+      category: 'club-contest',
+      title: 'Speech Contests — Design 6',
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official'],
+      format: 'Square',
+      image: 'assets/club-contest-06.png',
+      canvaUrl: 'https://canva.link/axp0f3s1zkzlpbm'
     }
   ],
   zoom: {
