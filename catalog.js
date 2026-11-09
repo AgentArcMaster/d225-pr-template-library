@@ -227,6 +227,42 @@ window.D225_CATALOG = {
       canvaUrl: 'https://canva.link/xsx8h9jv8pfyhso'
     },
     {
+      id: 'triple-crown-01',
+      category: 'triple-crown',
+      title: 'Triple Crown — Design 1',
+      tags: ['triple crown', 'education awards', 'recognition'],
+      format: 'Square',
+      image: 'assets/triple-crown-01.png',
+      canvaUrl: 'https://canva.link/9dsvzz3eh907m0k'
+    },
+    {
+      id: 'triple-crown-02',
+      category: 'triple-crown',
+      title: 'Triple Crown — Design 2',
+      tags: ['triple crown', 'education awards', 'recognition'],
+      format: 'Square',
+      image: 'assets/triple-crown-02.png',
+      canvaUrl: 'https://canva.link/mm91zz42v847ixw'
+    },
+    {
+      id: 'triple-crown-03',
+      category: 'triple-crown',
+      title: 'Triple Crown — Design 3',
+      tags: ['triple crown', 'education awards', 'recognition'],
+      format: 'Square',
+      image: 'assets/triple-crown-03.png',
+      canvaUrl: 'https://canva.link/yjmnqp3a6nl82cg'
+    },
+    {
+      id: 'triple-crown-04',
+      category: 'triple-crown',
+      title: 'Triple Crown — Design 4',
+      tags: ['triple crown', 'education awards', 'recognition'],
+      format: 'Square',
+      image: 'assets/triple-crown-04.png',
+      canvaUrl: 'https://canva.link/fnx4v8vkgmcivqv'
+    },
+    {
       id: 'club-contest-01',
       category: 'club-contest',
       title: 'Speech Contests — Design 1',
