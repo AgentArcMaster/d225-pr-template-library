@@ -466,7 +466,7 @@ window.D225_CATALOG = {
   // Example: { id: 'certificates-01', category: 'certificates', title: 'Certificate — Design 1',
   //   tags: ['appreciation'], format: 'Landscape', image: 'assets/certificates-01.png',
   //   canvaUrl: 'https://canva.link/...' }
-  presentation: { canvaUrl: '' },
+  presentation: { canvaUrl: 'https://canva.link/1l3krqcb8ensloa' },
   zoom: {
     roles: [
       { id: 'district-officers', label: 'District Officers', url: 'https://drive.google.com/drive/folders/16Yrf26Zmb742xdN0-TwO_2LwWFawBwNM' },
