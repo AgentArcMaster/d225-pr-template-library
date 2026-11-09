@@ -7,6 +7,9 @@
   const searchTip = document.querySelector('#search-tip');
   const searchTipText = document.querySelector('#search-tip-text');
   const searchTipAction = document.querySelector('#search-tip-action');
+  const collectionTip = document.querySelector('#collection-tip');
+  const collectionTipText = document.querySelector('#collection-tip-text');
+  const collectionTipAction = document.querySelector('#collection-tip-action');
   let dismissedTipQuery = '';
   const dialog = document.querySelector('#collection-dialog');
   const collectionView = document.querySelector('#collection-view');
@@ -33,6 +36,14 @@
   const published = templates.filter(item => item.id && item.title && categories.some(category => category.id === item.category) && (validPreview(item.image) || validCanvaUrl(item.canvaUrl)));
   const templateFor = id => published.filter(item => item.category === id);
   const findCategory = id => categories.find(item => item.id === id);
+  const relatedCollections = {
+    'meeting-leaders': { target: 'club-contest', text: 'Some Speech Contests layouts can be personalised for TMOD / GE / TTM too.', action: 'Explore contest designs ↗' },
+    'club-contest': { target: 'meeting-leaders', text: 'TMOD / GE / TTM layouts can be personalised for Contest Chair or Chief Judge too.', action: 'Explore meeting-role designs ↗' },
+    'level-completion': { target: 'pathways-completion', text: 'Some Pathways Completion layouts can be adapted for a level milestone. Update the achievement wording to match.', action: 'Explore Pathways designs ↗' },
+    'pathways-completion': { target: 'level-completion', text: 'Some Level Completion layouts can be adapted for a completed path. Update the achievement wording to match.', action: 'Explore Level designs ↗' },
+    'triple-crown': { target: 'dtm', text: 'Some DTM layouts can be adapted for Triple Crown recognition. Replace the designation wording with the correct award.', action: 'Explore DTM designs ↗' },
+    'dtm': { target: 'triple-crown', text: 'Some Triple Crown layouts can be adapted for a DTM milestone. Replace the award wording with the correct designation.', action: 'Explore Triple Crown designs ↗' }
+  };
   const searchableTemplate = item => {
     const category = findCategory(item.category);
     return [item.title, item.role, ...(Array.isArray(item.tags) ? item.tags : []), item.format, category?.title, category?.tag].join(' ').toLowerCase();
@@ -79,6 +90,13 @@
       : (category.details || 'A dedicated collection for this poster type.');
     templateList.replaceChildren(...available.map(createTemplateCard));
     comingSoon.hidden = available.length > 0;
+    const related = relatedCollections[id];
+    collectionTip.hidden = !related;
+    if (related) {
+      collectionTipText.textContent = related.text;
+      collectionTipAction.textContent = related.action;
+      collectionTipAction.dataset.collection = related.target;
+    }
     collectionUpdate.textContent = category.note || '';
     collectionUpdate.hidden = !category.note || allDesigns.length === 0;
     designView.hidden = true;
@@ -138,16 +156,20 @@
     });
     count.textContent = `${matches.length} ${matches.length === 1 ? 'collection' : 'collections'}`;
     empty.hidden = matches.length !== 0;
-    const contestRole = /\b(cc|cj|contest chair|chief judge|contestants?|contest officials?)\b/.test(query);
-    const meetingRole = /\b(tmod|ge|ttm|toastmaster of the day|general evaluator|table topics master)\b/.test(query);
-    const suggestedCollection = contestRole ? 'meeting-leaders' : meetingRole ? 'club-contest' : '';
-    searchTip.hidden = !suggestedCollection || dismissedTipQuery === query;
+    const suggestion = [
+      [/\b(cc|cj|contest chair|chief judge|contestants?|contest officials?)\b/, 'club-contest'],
+      [/\b(tmod|ge|ttm|toastmaster of the day|general evaluator|table topics master)\b/, 'meeting-leaders'],
+      [/\b(level\s*(?:[1-5]|completion)|level milestone)\b/, 'level-completion'],
+      [/\bpathways?\s+completion\b/, 'pathways-completion'],
+      [/\btriple\s+crown\b/, 'triple-crown'],
+      [/\b(dtm|distinguished toastmaster)\b/, 'dtm']
+    ].find(([pattern]) => pattern.test(query));
+    const related = suggestion && relatedCollections[suggestion[1]];
+    searchTip.hidden = !related || dismissedTipQuery === query;
     if (!searchTip.hidden) {
-      searchTipText.textContent = contestRole
-        ? 'Looking for a Contest Chair or Chief Judge poster? TMOD / GE / TTM designs can be personalised for CC / CJ too.'
-        : 'Looking for a meeting leader poster? Some Speech Contests layouts can be personalised for TMOD / GE / TTM too.';
-      searchTipAction.textContent = contestRole ? 'Explore meeting-role designs ↗' : 'Explore contest designs ↗';
-      searchTipAction.dataset.collection = suggestedCollection;
+      searchTipText.textContent = related.text;
+      searchTipAction.textContent = related.action;
+      searchTipAction.dataset.collection = related.target;
     }
   }
 
@@ -166,6 +188,10 @@
   }));
   search.addEventListener('input', render);
   searchTipAction.addEventListener('click', () => openCollection(searchTipAction.dataset.collection));
+  collectionTipAction.addEventListener('click', () => {
+    showCollection(collectionTipAction.dataset.collection);
+    document.querySelector('#dialog-close').focus();
+  });
   document.querySelector('#search-tip-close').addEventListener('click', () => { dismissedTipQuery = normalize(search.value); searchTip.hidden = true; });
   document.querySelectorAll('[data-query]').forEach(button => button.addEventListener('click', () => { search.value = button.dataset.query; render(); search.focus(); }));
   document.querySelector('#clear-search').addEventListener('click', () => { search.value = ''; document.querySelector('[data-filter="All"]').click(); search.focus(); });
@@ -454,4 +480,5 @@
     });
   }
 })();
+
 

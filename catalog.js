@@ -17,7 +17,7 @@ window.D225_CATALOG = {
     { id: 'birthday', title: 'Happy Birthday', tag: 'Community', keywords: 'birthday celebration wishes', mark: '09' },
     { id: 'role-player-winners', title: 'Winners — Role Players', tag: 'Recognition', keywords: 'best role player award meeting timer grammarian ah counter ah-counter sergeant at arms saa techmaster ballot counter vote counter quizmaster individual', mark: '10' },
     { id: 'agenda', title: 'Agenda & MoM', tag: 'Meetings', keywords: 'agenda mom minutes of meeting meeting minutes program schedule', details: 'Meeting agenda and Minutes of Meeting (MoM) designs.', mark: '11' },
-    { id: 'club-contest', title: 'Speech Contests', tag: 'Contests', keywords: 'club area division district contest winner participant contestants contestant contest officials contest chair chief judge cc cj humorous evaluation international table topics tmod ge ttm toastmaster of the day general evaluator table topics master', details: 'Templates for club, area, division, and district contest winners, participants, and officials.', mark: '12' },
+    { id: 'club-contest', title: 'Speech Contests', tag: 'Contests', keywords: 'club area division district contest winner participant contestants contestant contest officials contest chair chief judge cc cj humorous evaluation international table topics tmod ge ttm toastmaster of the day general evaluator table topics master', details: 'Templates for club, area, division, and district contest winners, participants, and officials.', note: 'More designs dropping soon.', mark: '12' },
     { id: 'testimonials', title: 'Testimonials', tag: 'Community', keywords: 'member stories quotes experience', mark: '13' }
   ],
   templates: [
@@ -487,3 +487,4 @@ window.D225_CATALOG = {
   ],
   prContactEmails: ['dr.raunakdtm@gmail.com', 'ankitkp31@gmail.com']
 };
+
