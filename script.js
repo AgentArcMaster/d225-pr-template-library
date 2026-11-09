@@ -42,6 +42,7 @@
     'level-completion': { target: 'pathways-completion', text: 'Some Pathways Completion layouts can be adapted for a level milestone. Update the achievement wording to match.', action: 'Explore Pathways designs ↗' },
     'pathways-completion': { target: 'level-completion', text: 'Some Level Completion layouts can be adapted for a completed path. Update the achievement wording to match.', action: 'Explore Level designs ↗' },
     'triple-crown': { target: 'dtm', text: 'Some DTM layouts can be adapted for Triple Crown recognition. Replace the designation wording with the correct award.', action: 'Explore DTM designs ↗' },
+    'agenda': { text: 'Agenda designs can also be used for Minutes of Meeting (MoM), and MoM designs can become agendas. Update the headings, sections, dates, and meeting details to suit the document.' },
     'dtm': { target: 'triple-crown', text: 'Some Triple Crown layouts can be adapted for a DTM milestone. Replace the award wording with the correct designation.', action: 'Explore Triple Crown designs ↗' }
   };
   const searchableTemplate = item => {
@@ -51,6 +52,7 @@
 
   function createPreview(item, large = false) {
     const frame = document.createElement('div'); frame.className = large ? 'design-preview-frame' : 'template-preview-frame';
+    if (!large && /^A4\b/i.test(item.format || '')) frame.classList.add('is-portrait');
     const placeholder = document.createElement('div'); placeholder.className = 'template-placeholder'; placeholder.textContent = item.title;
     if (validPreview(item.image)) {
       const img = document.createElement('img'); img.src = item.image; img.alt = `Full preview of ${item.title}`; img.loading = large ? 'eager' : 'lazy'; img.decoding = 'async';
@@ -97,8 +99,11 @@
     collectionTip.hidden = !related;
     if (related) {
       collectionTipText.textContent = related.text;
-      collectionTipAction.textContent = related.action;
-      collectionTipAction.dataset.collection = related.target;
+      collectionTipAction.hidden = !related.target;
+      if (related.target) {
+        collectionTipAction.textContent = related.action;
+        collectionTipAction.dataset.collection = related.target;
+      }
     }
     collectionUpdate.textContent = category.note || '';
     collectionUpdate.hidden = !category.note || allDesigns.length === 0;
@@ -205,6 +210,7 @@
     : 'Designs coming soon';
   document.querySelector('#certificates-explore').addEventListener('click', () => openCollection('certificates'));
   collectionTipAction.addEventListener('click', () => {
+    if (!collectionTipAction.dataset.collection) return;
     showCollection(collectionTipAction.dataset.collection);
     document.querySelector('#dialog-close').focus();
   });

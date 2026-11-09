@@ -16,7 +16,7 @@ window.D225_CATALOG = {
     { id: 'new-member', title: 'New Member Added', tag: 'Community', keywords: 'welcome new member induction', note: 'More designs dropping soon.', mark: '08' },
     { id: 'birthday', title: 'Happy Birthday', tag: 'Community', keywords: 'birthday celebration wishes', note: 'More designs dropping soon.', mark: '09' },
     { id: 'role-player-winners', title: 'Winners — Role Players', tag: 'Recognition', keywords: 'best role player award meeting timer grammarian ah counter ah-counter sergeant at arms saa techmaster ballot counter vote counter quizmaster individual', note: 'More designs dropping soon.', mark: '10' },
-    { id: 'agenda', title: 'Agenda & MoM', tag: 'Meetings', keywords: 'agenda mom minutes of meeting meeting minutes program schedule', details: 'Meeting agenda and Minutes of Meeting (MoM) designs.', mark: '11' },
+    { id: 'agenda', title: 'Agenda & MoM', tag: 'Meetings', keywords: 'agenda mom minutes of meeting meeting minutes program schedule', details: 'Meeting agenda and Minutes of Meeting (MoM) designs.', note: 'More designs dropping soon.', mark: '11' },
     { id: 'club-contest', title: 'Speech Contests', tag: 'Contests', keywords: 'club area division district contest winner participant contestants contestant contest officials contest chair chief judge cc cj humorous evaluation international table topics tmod ge ttm toastmaster of the day general evaluator table topics master', details: 'Templates for club, area, division, and district contest winners, participants, and officials.', note: 'More designs dropping soon.', mark: '12' },
     { id: 'testimonials', title: 'Testimonials', tag: 'Community', keywords: 'member stories quotes experience', mark: '13' },
     { id: 'certificates', title: 'Certificate Templates', tag: 'Recognition', keywords: 'certificate recognition appreciation award achievement', details: 'Browse editable certificates for recognition and appreciation. Designs will appear here as the PR team releases them.', mark: '14' }
@@ -453,6 +453,42 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/role-player-winners-05.png',
       canvaUrl: 'https://canva.link/kutssisu2o5az7d'
+    },
+    {
+      id: 'agenda-01',
+      category: 'agenda',
+      title: 'Agenda — Design 1',
+      tags: ['meeting agenda', 'schedule', 'meeting program'],
+      format: 'A4 Portrait',
+      image: 'assets/agenda-01.png',
+      canvaUrl: 'https://canva.link/jfvd7rteen6i7q8'
+    },
+    {
+      id: 'agenda-02',
+      category: 'agenda',
+      title: 'Agenda — Design 2',
+      tags: ['meeting agenda', 'schedule', 'meeting program'],
+      format: 'A4 Portrait',
+      image: 'assets/agenda-02.png',
+      canvaUrl: 'https://canva.link/ddlssf5zcn9gduf'
+    },
+    {
+      id: 'agenda-03',
+      category: 'agenda',
+      title: 'Agenda — Design 3',
+      tags: ['meeting agenda', 'schedule', 'meeting program'],
+      format: 'A4 Portrait',
+      image: 'assets/agenda-03.png',
+      canvaUrl: 'https://canva.link/mcrijyj2w610dsf'
+    },
+    {
+      id: 'agenda-04',
+      category: 'agenda',
+      title: 'Agenda — Design 4',
+      tags: ['meeting agenda', 'schedule', 'meeting program'],
+      format: 'A4 Portrait',
+      image: 'assets/agenda-04.png',
+      canvaUrl: 'https://canva.link/0zw2q3wifxs8xnv'
     },
     {
       id: 'club-contest-01',
