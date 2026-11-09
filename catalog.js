@@ -309,6 +309,51 @@ window.D225_CATALOG = {
       canvaUrl: 'https://canva.link/kl1brb5ugk8vzib'
     },
     {
+      id: 'new-member-01',
+      category: 'new-member',
+      title: 'New Member — Design 1',
+      tags: ['new member', 'welcome', 'induction', 'membership'],
+      format: 'Square',
+      image: 'assets/new-member-01.png',
+      canvaUrl: 'https://canva.link/laplmvw45k41ews'
+    },
+    {
+      id: 'new-member-02',
+      category: 'new-member',
+      title: 'New Member — Design 2',
+      tags: ['new member', 'welcome', 'induction', 'membership'],
+      format: 'Square',
+      image: 'assets/new-member-02.png',
+      canvaUrl: 'https://canva.link/tw61a151wxdlx2v'
+    },
+    {
+      id: 'new-member-03',
+      category: 'new-member',
+      title: 'New Member — Design 3',
+      tags: ['new member', 'welcome', 'induction', 'membership'],
+      format: 'Square',
+      image: 'assets/new-member-03.png',
+      canvaUrl: 'https://canva.link/2x49bqtx2jo072p'
+    },
+    {
+      id: 'new-member-04',
+      category: 'new-member',
+      title: 'New Member — Design 4',
+      tags: ['new member', 'welcome', 'induction', 'membership'],
+      format: 'Square',
+      image: 'assets/new-member-04.png',
+      canvaUrl: 'https://canva.link/7or8ol3236awo6m'
+    },
+    {
+      id: 'new-member-05',
+      category: 'new-member',
+      title: 'New Member — Design 5',
+      tags: ['new member', 'welcome', 'induction', 'membership'],
+      format: 'Square',
+      image: 'assets/new-member-05.png',
+      canvaUrl: 'https://canva.link/7pg04z1i1dl9nz2'
+    },
+    {
       id: 'club-contest-01',
       category: 'club-contest',
       title: 'Speech Contests — Design 1',
