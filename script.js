@@ -1,5 +1,6 @@
 (() => {
   const { categories, templates } = window.D225_CATALOG;
+  const posterCollectionCount = categories.filter(item => item.id !== 'certificates').length;
   const grid = document.querySelector('#collection-grid');
   const search = document.querySelector('#template-search');
   const count = document.querySelector('#results-count');
@@ -162,7 +163,7 @@
       card.type = 'button'; card.className = 'collection-card';
       const available = templateFor(item.id).length;
       card.setAttribute('aria-label', `View ${item.title} collection, ${available} ${available === 1 ? 'design' : 'designs'} available`);
-      card.innerHTML = `<div class="card-art"><span class="art-corner">D225 / ${item.mark}</span><div class="card-poster"><small>DISTRICT 225 · PR</small><strong></strong><i></i></div></div><div class="card-content"><div class="card-topline"><span></span><span>${item.id === 'certificates' ? 'CERTIFICATES' : `${item.mark} / 13`}</span></div><h3></h3><div class="card-status"><span>${available ? `${available} ${available === 1 ? 'design' : 'designs'} available` : 'Designs coming soon'}</span><b aria-hidden="true">↗</b></div></div>`;
+      card.innerHTML = `<div class="card-art"><span class="art-corner">D225 / ${item.mark}</span><div class="card-poster"><small>DISTRICT 225 · PR</small><strong></strong><i></i></div></div><div class="card-content"><div class="card-topline"><span></span><span>${item.id === 'certificates' ? 'CERTIFICATES' : `${item.mark} / ${posterCollectionCount}`}</span></div><h3></h3><div class="card-status"><span>${available ? `${available} ${available === 1 ? 'design' : 'designs'} available` : 'Designs coming soon'}</span><b aria-hidden="true">↗</b></div></div>`;
       card.querySelector('.card-poster strong').textContent = item.title;
       card.querySelector('.card-topline span').textContent = item.tag;
       card.querySelector('h3').textContent = item.title;
