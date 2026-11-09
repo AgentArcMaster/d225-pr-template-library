@@ -372,20 +372,73 @@
     const details = document.createElement('details');
     details.className = 'prompt-details';
     const summary = document.createElement('summary');
-    summary.textContent = 'Read prompt';
-    const body = document.createElement('p');
-    body.textContent = fullPrompt(item);
-    details.append(summary, body);
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'prompt-copy';
-    button.textContent = 'Copy prompt ↗';
-    button.setAttribute('aria-label', `Copy ${item.title} prompt`);
-    button.addEventListener('click', async () => {
-      if (await copyPrompt(fullPrompt(item))) showToast(`${item.title} prompt copied`);
-      else { details.open = true; showToast('Copy unavailable; select the prompt text above.'); }
+    summary.textContent = 'Read more';
+    const switcher = document.createElement('div');
+    switcher.className = 'prompt-switch';
+    switcher.setAttribute('role', 'tablist');
+    switcher.setAttribute('aria-label', `${item.title} caption resources`);
+    const panels = ['prompt', 'sample'].map((type, tabIndex) => {
+      const tab = document.createElement('button');
+      tab.type = 'button';
+      tab.className = 'prompt-switch-tab';
+      tab.id = `tab-${type}-${item.id}`;
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-controls', `panel-${type}-${item.id}`);
+      tab.textContent = type === 'prompt' ? 'AI prompt' : 'Sample caption';
+      const panel = document.createElement('div');
+      panel.className = 'prompt-slide';
+      panel.id = `panel-${type}-${item.id}`;
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tab.id);
+      const label = document.createElement('span');
+      label.className = 'prompt-slide-label';
+      label.textContent = type === 'prompt' ? 'COPY · FILL IN · GENERATE' : 'EXAMPLE · PERSONALISE BEFORE POSTING';
+      const body = document.createElement('p');
+      body.textContent = type === 'prompt' ? fullPrompt(item) : item.sampleCaption;
+      panel.append(label, body);
+      switcher.append(tab);
+      tab.addEventListener('click', () => selectSlide(tabIndex));
+      tab.addEventListener('keydown', event => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? 1 :
+          (tabIndex + (event.key === 'ArrowRight' ? 1 : -1) + 2) % 2;
+        selectSlide(next);
+        switcher.children[next].focus();
+      });
+      return panel;
     });
-    card.append(top, heading, description, details, button);
+    function selectSlide(index) {
+      [...switcher.children].forEach((tab, i) => {
+        tab.setAttribute('aria-selected', String(i === index));
+        tab.tabIndex = i === index ? 0 : -1;
+        panels[i].hidden = i !== index;
+      });
+    }
+    selectSlide(0);
+    details.append(summary, switcher, ...panels);
+    const actions = document.createElement('div');
+    actions.className = 'prompt-actions';
+    const promptButton = document.createElement('button');
+    promptButton.type = 'button';
+    promptButton.className = 'prompt-copy';
+    promptButton.textContent = 'Copy prompt ↗';
+    promptButton.setAttribute('aria-label', `Copy ${item.title} prompt`);
+    promptButton.addEventListener('click', async () => {
+      if (await copyPrompt(fullPrompt(item))) showToast(`${item.title} prompt copied`);
+      else { details.open = true; selectSlide(0); showToast('Copy unavailable; select the prompt text above.'); }
+    });
+    const captionButton = document.createElement('button');
+    captionButton.type = 'button';
+    captionButton.className = 'prompt-copy prompt-copy-caption';
+    captionButton.textContent = 'Copy caption ↗';
+    captionButton.setAttribute('aria-label', `Copy ${item.title} sample caption`);
+    captionButton.addEventListener('click', async () => {
+      if (await copyPrompt(item.sampleCaption)) showToast(`${item.title} sample caption copied — personalise before posting`);
+      else { details.open = true; selectSlide(1); showToast('Copy unavailable; select the sample caption text above.'); }
+    });
+    actions.append(promptButton, captionButton);
+    card.append(top, heading, description, details, actions);
     return card;
   }
 

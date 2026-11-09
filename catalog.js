@@ -439,7 +439,8 @@ window.D225_CATALOG = {
         "invitation",
         "theme"
       ],
-      "prompt": "Write an inviting caption for [Club Name]'s meeting #[Number] on [Date] at [Time] in [Venue or online link]. Theme: [Theme]. Guests can [registration or contact instructions]. Mention [special segment, optional]. Make the invitation welcoming to first-time guests."
+      "prompt": "Write an inviting caption for [Club Name]'s meeting #[Number] on [Date] at [Time] in [Venue or online link]. Theme: [Theme]. Guests can [registration or contact instructions]. Mention [special segment, optional]. Make the invitation welcoming to first-time guests.",
+      "sampleCaption": "A new meeting, a new chance to find your voice. Join [Club Name] for meeting #[Number] as we explore [Theme] together.\n\n📅 [Date] · [Time]\n📍 [Venue or online link]\n\nFirst-time guest? You are welcome here. [Registration or contact instructions]"
     },
     {
       "id": "speakers-evaluators",
@@ -451,7 +452,8 @@ window.D225_CATALOG = {
         "evaluator",
         "speech"
       ],
-      "prompt": "Introduce the prepared speakers and evaluators for [Club Name]'s meeting on [Date]. Speakers: [Names and speech titles]. Evaluators: [Names and pairings]. Include [meeting theme, optional], [time and venue], and [guest invitation or link]. Keep each person's role accurate."
+      "prompt": "Introduce the prepared speakers and evaluators for [Club Name]'s meeting on [Date]. Speakers: [Names and speech titles]. Evaluators: [Names and pairings]. Include [meeting theme, optional], [time and venue], and [guest invitation or link]. Keep each person's role accurate.",
+      "sampleCaption": "Every speech brings a fresh perspective, and every evaluation helps it grow. Meet the speakers and evaluators taking the stage at [Club Name]'s meeting on [Date].\n\n🎤 Speakers: [Names and speech titles]\n📝 Evaluators: [Names and pairings]\n\nJoin us at [Time and venue]. [Guest invitation or link]"
     },
     {
       "id": "meeting-leaders",
@@ -464,7 +466,8 @@ window.D225_CATALOG = {
         "ttm",
         "roleplayer"
       ],
-      "prompt": "Write a caption introducing the meeting role players for [Club Name], meeting #[Number], on [Date]. TMOD: [Name]; General Evaluator: [Name]; Table Topics Master: [Name]. Theme: [Theme]. Add [time, venue or meeting link] and a short invitation to attend. Omit any role that is not supplied."
+      "prompt": "Write a caption introducing the meeting role players for [Club Name], meeting #[Number], on [Date]. TMOD: [Name]; General Evaluator: [Name]; Table Topics Master: [Name]. Theme: [Theme]. Add [time, venue or meeting link] and a short invitation to attend. Omit any role that is not supplied.",
+      "sampleCaption": "The people behind the programme make every meeting memorable. Meet the team guiding [Club Name]'s meeting #[Number] on [Date].\n\nTMOD: [Name]\nGeneral Evaluator: [Name]\nTable Topics Master: [Name]\n\nOur theme is [Theme]. Join us at [Time and venue or link]!"
     },
     {
       "id": "level-completion",
@@ -476,7 +479,8 @@ window.D225_CATALOG = {
         "level",
         "achievement"
       ],
-      "prompt": "Celebrate [Member Name] of [Club Name] completing Level [Number] in [Pathway Name]. Include [specific project, lesson, or effort, optional]. Make the recognition personal and accurate; do not invent a quote or award."
+      "prompt": "Celebrate [Member Name] of [Club Name] completing Level [Number] in [Pathway Name]. Include [specific project, lesson, or effort, optional]. Make the recognition personal and accurate; do not invent a quote or award.",
+      "sampleCaption": "One level complete. Many more possibilities ahead. Congratulations to [Member Name] of [Club Name] on completing Level [Number] in [Pathway Name]!\n\nYour commitment to learning and showing up for every step deserves to be celebrated. Here's to the next chapter of your Pathways journey. 🎉"
     },
     {
       "id": "pathways-completion",
@@ -488,7 +492,8 @@ window.D225_CATALOG = {
         "education",
         "milestone"
       ],
-      "prompt": "Congratulate [Member Name] of [Club Name] for completing the [Pathway Name] pathway. Mention [a verified journey detail or skill gained, optional]. Emphasise the milestone without implying any additional award or title."
+      "prompt": "Congratulate [Member Name] of [Club Name] for completing the [Pathway Name] pathway. Mention [a verified journey detail or skill gained, optional]. Emphasise the milestone without implying any additional award or title.",
+      "sampleCaption": "A pathway is built one project, one speech, and one brave step at a time. Congratulations to [Member Name] of [Club Name] on completing [Pathway Name]!\n\nThis milestone reflects the dedication you brought to your learning journey. We can't wait to see where you take those skills next."
     },
     {
       "id": "triple-crown",
@@ -499,7 +504,8 @@ window.D225_CATALOG = {
         "triple crown",
         "education awards"
       ],
-      "prompt": "Write a recognition caption for [Member Name] of [Club Name] receiving the Triple Crown. List the three qualifying education awards exactly as provided: [Award 1], [Award 2], [Award 3], earned in [Program Year]. Do not assume which awards qualify or invent their dates."
+      "prompt": "Write a recognition caption for [Member Name] of [Club Name] receiving the Triple Crown. List the three qualifying education awards exactly as provided: [Award 1], [Award 2], [Award 3], earned in [Program Year]. Do not assume which awards qualify or invent their dates.",
+      "sampleCaption": "Three education awards. One remarkable milestone. 👑\n\nCongratulations to [Member Name] of [Club Name] on earning the Triple Crown in [Program Year] through [Award 1], [Award 2], and [Award 3]. Your commitment to growth deserves this moment in the spotlight!"
     },
     {
       "id": "club-award",
@@ -511,7 +517,8 @@ window.D225_CATALOG = {
         "award",
         "recognition"
       ],
-      "prompt": "Celebrate [Club Name] receiving [Award Name] for [verified achievement or criteria] during [Period]. Mention [club effort or leader names, optional] only if supplied. Focus on what the club actually accomplished."
+      "prompt": "Celebrate [Club Name] receiving [Award Name] for [verified achievement or criteria] during [Period]. Mention [club effort or leader names, optional] only if supplied. Focus on what the club actually accomplished.",
+      "sampleCaption": "A club achievement is always a team achievement. Congratulations to [Club Name] on receiving [Award Name] for [verified achievement] during [Period].\n\nTo every member who contributed: this recognition belongs to you. Here's to building on the momentum together!"
     },
     {
       "id": "dtm",
@@ -522,7 +529,8 @@ window.D225_CATALOG = {
         "dtm",
         "distinguished toastmaster"
       ],
-      "prompt": "Congratulate [Member Name] of [Club Name] on earning the Distinguished Toastmaster (DTM) designation. Include [verified journey detail or personal reflection, optional]. Keep the tone sincere and do not invent years of service, speeches, or leadership roles."
+      "prompt": "Congratulate [Member Name] of [Club Name] on earning the Distinguished Toastmaster (DTM) designation. Include [verified journey detail or personal reflection, optional]. Keep the tone sincere and do not invent years of service, speeches, or leadership roles.",
+      "sampleCaption": "A milestone worthy of a standing ovation. Congratulations to [Member Name] of [Club Name] on earning the Distinguished Toastmaster (DTM) designation!\n\nThis achievement speaks to your dedication to communication and leadership. We celebrate you and the journey that brought you here."
     },
     {
       "id": "new-member",
@@ -533,7 +541,8 @@ window.D225_CATALOG = {
         "welcome",
         "member"
       ],
-      "prompt": "Welcome [Member Name] to [Club Name]. Include [one approved personal interest or reason for joining, optional]. Make it warm and inclusive, and invite the community to say hello without inventing details about the person."
+      "prompt": "Welcome [Member Name] to [Club Name]. Include [one approved personal interest or reason for joining, optional]. Make it warm and inclusive, and invite the community to say hello without inventing details about the person.",
+      "sampleCaption": "A new voice has joined our community! Please join us in welcoming [Member Name] to [Club Name].\n\nWe're glad you're here and excited to learn, grow, and share the stage together. Drop a warm hello in the comments! 👋"
     },
     {
       "id": "birthday",
@@ -544,7 +553,8 @@ window.D225_CATALOG = {
         "birthday",
         "wishes"
       ],
-      "prompt": "Write a birthday caption for [Member Name] from [Club or District Name]. Include [personal note, optional]. Keep it warm and concise. Do not mention office or role unless I explicitly provide it: [Role, optional]."
+      "prompt": "Write a birthday caption for [Member Name] from [Club or District Name]. Include [personal note, optional]. Keep it warm and concise. Do not mention office or role unless I explicitly provide it: [Role, optional].",
+      "sampleCaption": "[Club or District Name] wishes [Member Name] a very happy birthday! 🎂\n\nMay the year ahead bring you meaningful moments, fresh opportunities, and plenty of reasons to smile. Have a wonderful day!"
     },
     {
       "id": "role-winner",
@@ -557,7 +567,8 @@ window.D225_CATALOG = {
         "grammarian",
         "winner"
       ],
-      "prompt": "Congratulate [Member Name] of [Club Name] for [Exact Award or Role] at meeting #[Number] on [Date]. Include [one verified contribution, optional]. Use the exact award wording and avoid implying a contest result."
+      "prompt": "Congratulate [Member Name] of [Club Name] for [Exact Award or Role] at meeting #[Number] on [Date]. Include [one verified contribution, optional]. Use the exact award wording and avoid implying a contest result.",
+      "sampleCaption": "A thoughtful contribution deserves recognition. Congratulations to [Member Name] of [Club Name] on receiving [Exact Award or Role] at meeting #[Number] on [Date]!\n\nThank you for helping make the meeting an experience we could all learn from. 👏"
     },
     {
       "id": "agenda",
@@ -568,7 +579,8 @@ window.D225_CATALOG = {
         "agenda",
         "schedule"
       ],
-      "prompt": "Write a caption to accompany the agenda for [Club Name]'s meeting #[Number] on [Date] at [Time] in [Venue or online]. Theme: [Theme]. Highlight [one or two confirmed agenda items]. Invite guests using [registration or contact detail]. Do not invent speakers or timings."
+      "prompt": "Write a caption to accompany the agenda for [Club Name]'s meeting #[Number] on [Date] at [Time] in [Venue or online]. Theme: [Theme]. Highlight [one or two confirmed agenda items]. Invite guests using [registration or contact detail]. Do not invent speakers or timings.",
+      "sampleCaption": "Here's what's on the agenda for [Club Name]'s meeting #[Number]! We're exploring [Theme] and looking forward to [confirmed agenda highlight].\n\n📅 [Date] · [Time]\n📍 [Venue or online link]\n\nTake a look at the agenda, and join us if you can. [Guest registration or contact detail]"
     },
     {
       "id": "mom",
@@ -580,7 +592,8 @@ window.D225_CATALOG = {
         "minutes",
         "recap"
       ],
-      "prompt": "Write a concise public recap of [Club Name]'s meeting #[Number] held on [Date]. Approved highlights: [Highlights]. Approved decisions or next steps: [Items, optional]. Do not reveal confidential minutes, private member information, or unapproved quotes."
+      "prompt": "Write a concise public recap of [Club Name]'s meeting #[Number] held on [Date]. Approved highlights: [Highlights]. Approved decisions or next steps: [Items, optional]. Do not reveal confidential minutes, private member information, or unapproved quotes.",
+      "sampleCaption": "A look back at [Club Name]'s meeting #[Number] on [Date]. From [approved highlight 1] to [approved highlight 2], it was a chance to learn and connect.\n\nThank you to everyone who took part. Here's to carrying that momentum into our next meeting!"
     },
     {
       "id": "club-contest",
@@ -602,7 +615,8 @@ window.D225_CATALOG = {
         "division",
         "district"
       ],
-      "prompt": "Write a caption for [Contest Type] at the [Club / Area / Division / District Name] level on [Date]. Purpose: [announce event / thank participants and officials / announce results]. Winners and ranks: [Exact Names and Ranks, if applicable]. Participants: [Names, optional]. Officials: [Names and Roles, optional]. Verify every title and placement; do not invent rankings."
+      "prompt": "Write a caption for [Contest Type] at the [Club / Area / Division / District Name] level on [Date]. Purpose: [announce event / thank participants and officials / announce results]. Winners and ranks: [Exact Names and Ranks, if applicable]. Participants: [Names, optional]. Officials: [Names and Roles, optional]. Verify every title and placement; do not invent rankings.",
+      "sampleCaption": "The stage is set for [Contest Type] at [Club / Area / Division / District Name]! Join us on [Date] as contestants bring their voices and ideas to the spotlight.\n\nTo every participant and contest official: thank you for making this opportunity possible. [Time, venue, or registration detail]"
     },
     {
       "id": "testimonial",
@@ -614,7 +628,8 @@ window.D225_CATALOG = {
         "quote",
         "story"
       ],
-      "prompt": "Write a caption around this approved member testimonial: [Exact Quote], attributed to [Member Name, Club]. Add [approved context, optional] and [call to action, optional]. Preserve the meaning of the quote, do not fabricate additional words, and use it only if the member has approved publication."
+      "prompt": "Write a caption around this approved member testimonial: [Exact Quote], attributed to [Member Name, Club]. Add [approved context, optional] and [call to action, optional]. Preserve the meaning of the quote, do not fabricate additional words, and use it only if the member has approved publication.",
+      "sampleCaption": "Every member's journey has a story worth hearing.\n\n“[Exact approved quote]”\n— [Member Name], [Club Name]\n\nThank you for sharing your experience with our community. [Approved call to action, if any]"
     }
   ],
   prContactEmails: ['dr.raunakdtm@gmail.com', 'ankitkp31@gmail.com']
