@@ -183,3 +183,35 @@
 .design-actions .button[hidden]{display:none}
 .prompt-card{scroll-margin-top:22px}
 
+/* Certificates and prescribed presentation resources */
+.resource-section{background:var(--pale)}
+.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.resource-panel{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #d8e2e5;overflow:hidden}
+.resource-panel-copy{padding:clamp(26px,3.5vw,44px)}
+.resource-index{font:800 10px/1.4 var(--heading);letter-spacing:.15em;color:var(--maroon)}
+.resource-panel h3{font:800 clamp(28px,3vw,41px)/1.08 var(--heading);letter-spacing:-.055em;margin:17px 0 14px}
+.resource-panel-copy>p{color:#4c6877;font-size:16px;line-height:1.55;max-width:510px;margin:0 0 25px}
+.resource-panel-copy .button{min-height:52px;justify-content:center}
+.resource-panel-copy small{display:block;margin-top:14px;color:#607986;font:700 11px var(--heading)}
+.certificate-art{flex:1;min-height:270px;background:var(--blue);padding:30px;display:grid;place-items:center}
+.certificate-sheet{width:min(100%,520px);aspect-ratio:1.48;background:#fff;color:var(--blue);border:7px double var(--yellow);box-shadow:0 14px 28px rgba(0,0,0,.22);padding:clamp(17px,2vw,28px);display:flex;flex-direction:column;justify-content:space-between;text-align:center}
+.certificate-sheet span,.certificate-sheet small{font:800 9px/1.3 var(--heading);letter-spacing:.14em}
+.certificate-sheet strong{font:800 clamp(17px,2vw,27px)/1.1 var(--heading);letter-spacing:-.04em}
+.certificate-sheet i{width:45%;height:2px;background:var(--maroon);align-self:center}
+.presentation-panel .resource-panel-copy{background:var(--blue);color:#fff}
+.presentation-panel .resource-index{color:var(--yellow)}
+.presentation-panel .resource-panel-copy>p{color:#d6e5e9}
+.presentation-panel .resource-panel-copy .button{background:var(--yellow);color:var(--blue)}
+.resource-pending{display:inline-flex;align-items:center;min-height:52px;padding:14px 18px;background:rgba(255,255,255,.12);color:#e7eef1;font:700 12px var(--heading)}
+.presentation-rules{padding:clamp(26px,3.5vw,44px);flex:1}
+.presentation-rules h4{font:800 15px var(--heading);letter-spacing:.08em;text-transform:uppercase;color:var(--maroon);margin:0 0 19px}
+.presentation-rules ul{padding-left:20px;margin:0;display:grid;gap:13px;color:#405e6e;font-size:14px;line-height:1.5}
+.presentation-rules p{font-size:12px;line-height:1.5;color:#607986;margin:23px 0 0}
+.presentation-rules a{text-underline-offset:3px}
+.hero-resource-preview{width:min(100%,365px);aspect-ratio:1.45;background:#fff;color:var(--blue);padding:25px 28px;border:8px solid var(--yellow);box-shadow:0 18px 30px rgba(0,0,0,.22);display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-4deg)}
+.hero-resource-preview span,.hero-resource-preview small{font:800 9px var(--heading);letter-spacing:.12em}
+.hero-resource-preview strong{font:800 clamp(22px,2.4vw,33px)/1.05 var(--heading);letter-spacing:-.06em}
+@media(max-width:900px){.resource-grid{grid-template-columns:1fr}.certificate-art{min-height:260px}}
+@media(max-width:500px){.resource-panel-copy,.presentation-rules{padding:26px}.certificate-art{padding:20px;min-height:230px}.certificate-sheet{max-width:340px}}
+@media(max-width:400px){#hero-slide-count{display:none}}
+

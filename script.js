@@ -68,7 +68,7 @@
     const category = findCategory(item.category);
     const label = document.createElement('span'); label.className = 'template-category'; label.textContent = category.title;
     const heading = document.createElement('h3'); heading.textContent = item.title;
-    const meta = document.createElement('p'); meta.textContent = [item.role, item.format || 'Poster'].filter(Boolean).join(' · ');
+    const meta = document.createElement('p'); meta.textContent = [item.role, item.format || (item.category === 'certificates' ? 'Certificate' : 'Poster')].filter(Boolean).join(' · ');
     const action = document.createElement('span'); action.className = 'template-view-action'; action.textContent = 'View design ↗';
     body.append(label, heading, meta, action); card.append(body);
     card.addEventListener('click', () => openDesign(item));
@@ -90,6 +90,9 @@
       : (category.details || 'A dedicated collection for this poster type.');
     templateList.replaceChildren(...available.map(createTemplateCard));
     comingSoon.hidden = available.length > 0;
+    document.querySelector('#coming-soon-description').textContent = id === 'certificates'
+      ? 'Certificate previews will appear here as the PR team releases them.'
+      : 'Poster previews will appear here as the PR team releases them.';
     const related = relatedCollections[id];
     collectionTip.hidden = !related;
     if (related) {
@@ -116,7 +119,10 @@
     document.querySelector('#design-preview').replaceChildren(createPreview(item, true));
     document.querySelector('#design-kicker').textContent = findCategory(item.category).title;
     document.querySelector('#design-title').textContent = item.title;
-    document.querySelector('#design-meta').textContent = [item.role, item.format || 'Poster'].filter(Boolean).join(' · ');
+    document.querySelector('#design-meta').textContent = [item.role, item.format || (item.category === 'certificates' ? 'Certificate' : 'Poster')].filter(Boolean).join(' · ');
+    document.querySelector('#design-instruction').textContent = item.category === 'certificates'
+      ? 'Preview the certificate, then open its Canva template to personalise it for your recipient.'
+      : 'Preview the full poster, then open its Canva template to personalise it for your club.';
     const link = document.querySelector('#design-canva-link');
     const hasLink = validCanvaUrl(item.canvaUrl);
     link.hidden = !hasLink;
@@ -137,6 +143,7 @@
   function render() {
     const query = normalize(search.value);
     const matches = categories.filter(item => {
+      if (item.id === 'certificates' && !query) return false;
       const inFilter = activeFilter === 'All' || item.tag === activeFilter;
       const searchable = [item.title, item.tag, item.keywords, ...templateFor(item.id).map(searchableTemplate)].join(' ').toLowerCase();
       return inFilter && (!query || matchesSearch(searchable, query));
@@ -147,7 +154,7 @@
       card.type = 'button'; card.className = 'collection-card';
       const available = templateFor(item.id).length;
       card.setAttribute('aria-label', `View ${item.title} collection, ${available} ${available === 1 ? 'design' : 'designs'} available`);
-      card.innerHTML = `<div class="card-art"><span class="art-corner">D225 / ${item.mark}</span><div class="card-poster"><small>DISTRICT 225 · PR</small><strong></strong><i></i></div></div><div class="card-content"><div class="card-topline"><span></span><span>${item.mark} / 13</span></div><h3></h3><div class="card-status"><span>${available ? `${available} ${available === 1 ? 'design' : 'designs'} available` : 'Designs coming soon'}</span><b aria-hidden="true">↗</b></div></div>`;
+      card.innerHTML = `<div class="card-art"><span class="art-corner">D225 / ${item.mark}</span><div class="card-poster"><small>DISTRICT 225 · PR</small><strong></strong><i></i></div></div><div class="card-content"><div class="card-topline"><span></span><span>${item.id === 'certificates' ? 'CERTIFICATES' : `${item.mark} / 13`}</span></div><h3></h3><div class="card-status"><span>${available ? `${available} ${available === 1 ? 'design' : 'designs'} available` : 'Designs coming soon'}</span><b aria-hidden="true">↗</b></div></div>`;
       card.querySelector('.card-poster strong').textContent = item.title;
       card.querySelector('.card-topline span').textContent = item.tag;
       card.querySelector('h3').textContent = item.title;
@@ -188,6 +195,12 @@
   }));
   search.addEventListener('input', render);
   searchTipAction.addEventListener('click', () => openCollection(searchTipAction.dataset.collection));
+  const certificatesCount = document.querySelector('#certificates-count');
+  const certificateDesignCount = templateFor('certificates').length;
+  certificatesCount.textContent = certificateDesignCount
+    ? `${certificateDesignCount} ${certificateDesignCount === 1 ? 'design' : 'designs'} available`
+    : 'Designs coming soon';
+  document.querySelector('#certificates-explore').addEventListener('click', () => openCollection('certificates'));
   collectionTipAction.addEventListener('click', () => {
     showCollection(collectionTipAction.dataset.collection);
     document.querySelector('#dialog-close').focus();
@@ -285,6 +298,20 @@
     if (returnFocus?.isConnected) returnFocus.focus();
     returnFocus = null;
   });
+})();
+
+/* Single district presentation template */
+(() => {
+  const link = document.querySelector('#presentation-link');
+  const pending = document.querySelector('#presentation-pending');
+  const value = window.D225_CATALOG.presentation?.canvaUrl;
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:' || !['canva.link', 'canva.com', 'www.canva.com'].includes(url.hostname)) return;
+    link.href = url.href;
+    link.hidden = false;
+    pending.hidden = true;
+  } catch { /* Keep the honest coming-soon state until a valid link is added. */ }
 })();
 
 /* Caption prompt library and PR contact */
