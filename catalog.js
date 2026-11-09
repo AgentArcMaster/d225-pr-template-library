@@ -15,7 +15,7 @@ window.D225_CATALOG = {
     { id: 'dtm', title: 'DTM', tag: 'Recognition', keywords: 'distinguished toastmaster milestone', note: 'More designs dropping soon.', mark: '07' },
     { id: 'new-member', title: 'New Member Added', tag: 'Community', keywords: 'welcome new member induction', note: 'More designs dropping soon.', mark: '08' },
     { id: 'birthday', title: 'Happy Birthday', tag: 'Community', keywords: 'birthday celebration wishes', note: 'More designs dropping soon.', mark: '09' },
-    { id: 'role-player-winners', title: 'Winners — Role Players', tag: 'Recognition', keywords: 'best role player award meeting timer grammarian ah counter ah-counter sergeant at arms saa techmaster ballot counter vote counter quizmaster individual', mark: '10' },
+    { id: 'role-player-winners', title: 'Winners — Role Players', tag: 'Recognition', keywords: 'best role player award meeting timer grammarian ah counter ah-counter sergeant at arms saa techmaster ballot counter vote counter quizmaster individual', note: 'More designs dropping soon.', mark: '10' },
     { id: 'agenda', title: 'Agenda & MoM', tag: 'Meetings', keywords: 'agenda mom minutes of meeting meeting minutes program schedule', details: 'Meeting agenda and Minutes of Meeting (MoM) designs.', mark: '11' },
     { id: 'club-contest', title: 'Speech Contests', tag: 'Contests', keywords: 'club area division district contest winner participant contestants contestant contest officials contest chair chief judge cc cj humorous evaluation international table topics tmod ge ttm toastmaster of the day general evaluator table topics master', details: 'Templates for club, area, division, and district contest winners, participants, and officials.', note: 'More designs dropping soon.', mark: '12' },
     { id: 'testimonials', title: 'Testimonials', tag: 'Community', keywords: 'member stories quotes experience', mark: '13' },
@@ -406,6 +406,51 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/birthday-06.png',
       canvaUrl: 'https://canva.link/k799p1j9h6unnoo'
+    },
+    {
+      id: 'role-player-winners-01',
+      category: 'role-player-winners',
+      title: 'Role-Player Winner — Design 1',
+      tags: ['role player winner', 'meeting award', 'best role player', 'individual recognition'],
+      format: 'Square',
+      image: 'assets/role-player-winners-01.png',
+      canvaUrl: 'https://canva.link/23xaz0aa3657b2g'
+    },
+    {
+      id: 'role-player-winners-02',
+      category: 'role-player-winners',
+      title: 'Role-Player Winner — Design 2',
+      tags: ['role player winner', 'meeting award', 'best role player', 'individual recognition'],
+      format: 'Square',
+      image: 'assets/role-player-winners-02.png',
+      canvaUrl: 'https://canva.link/owkqugd4hz1yr77'
+    },
+    {
+      id: 'role-player-winners-03',
+      category: 'role-player-winners',
+      title: 'Role-Player Winner — Design 3',
+      tags: ['role player winner', 'meeting award', 'best role player', 'individual recognition'],
+      format: 'Square',
+      image: 'assets/role-player-winners-03.png',
+      canvaUrl: 'https://canva.link/7uosssdmum9yz4c'
+    },
+    {
+      id: 'role-player-winners-04',
+      category: 'role-player-winners',
+      title: 'Role-Player Winner — Design 4',
+      tags: ['role player winner', 'meeting award', 'best role player', 'individual recognition'],
+      format: 'Square',
+      image: 'assets/role-player-winners-04.png',
+      canvaUrl: 'https://canva.link/bbvabb9nfzt3kll'
+    },
+    {
+      id: 'role-player-winners-05',
+      category: 'role-player-winners',
+      title: 'Role-Player Winner — Design 5',
+      tags: ['role player winner', 'meeting award', 'best role player', 'individual recognition'],
+      format: 'Square',
+      image: 'assets/role-player-winners-05.png',
+      canvaUrl: 'https://canva.link/kutssisu2o5az7d'
     },
     {
       id: 'club-contest-01',
