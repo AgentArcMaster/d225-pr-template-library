@@ -129,6 +129,9 @@
     if (hasLink) link.href = item.canvaUrl;
     else link.removeAttribute('href');
     document.querySelector('#design-link-pending').hidden = hasLink;
+    const credit = document.querySelector('#design-credit');
+    document.querySelector('#design-credit-text').textContent = item.credit || '';
+    credit.hidden = !item.credit;
     const captionButton = document.querySelector('#design-caption-button');
     const promptId = promptForDesign(item);
     captionButton.hidden = !window.D225_CATALOG.captionPrompts.some(prompt => prompt.id === promptId);

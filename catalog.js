@@ -414,7 +414,8 @@ window.D225_CATALOG = {
       tags: ['role player winner', 'meeting award', 'best role player', 'individual recognition'],
       format: 'Square',
       image: 'assets/role-player-winners-01.png',
-      canvaUrl: 'https://canva.link/23xaz0aa3657b2g'
+      canvaUrl: 'https://canva.link/23xaz0aa3657b2g',
+      credit: 'Sourced from the District 124 PR Resource. Thank you to the District 124 PR team for sharing this thoughtful design with the wider Toastmasters community.'
     },
     {
       id: 'role-player-winners-02',
@@ -423,7 +424,8 @@ window.D225_CATALOG = {
       tags: ['role player winner', 'meeting award', 'best role player', 'individual recognition'],
       format: 'Square',
       image: 'assets/role-player-winners-02.png',
-      canvaUrl: 'https://canva.link/owkqugd4hz1yr77'
+      canvaUrl: 'https://canva.link/owkqugd4hz1yr77',
+      credit: 'Sourced from the District 124 PR Resource. Thank you to the District 124 PR team for sharing this thoughtful design with the wider Toastmasters community.'
     },
     {
       id: 'role-player-winners-03',

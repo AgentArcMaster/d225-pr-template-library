@@ -34,6 +34,9 @@
 .design-detail-copy #design-meta{font:700 13px var(--heading);color:var(--maroon)}
 .design-detail-copy .button{margin-top:18px}
 .design-link-pending{font:700 13px var(--heading);padding:16px 0}
+.design-credit{margin-top:19px;padding:17px 18px;background:#f5f7f7;border-left:4px solid var(--maroon);max-width:440px}
+.design-credit span{display:block;color:var(--maroon);font:800 10px/1.35 var(--heading);letter-spacing:.12em;margin-bottom:7px}
+.design-detail-copy .design-credit p{color:#375667;font-size:13px;line-height:1.55;margin:0}
 @media(max-width:760px){.template-list{grid-template-columns:repeat(2,minmax(0,1fr))}.design-detail{grid-template-columns:1fr;gap:22px}.design-preview-frame{height:min(52vh,520px)}.design-detail-art{min-height:250px}}
 @media(max-width:500px){.template-list{gap:9px}.template-item-body{padding:12px;min-height:125px}.dialog-inner{padding:30px 19px}.design-detail-copy h2{font-size:31px}}
 
