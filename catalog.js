@@ -282,6 +282,33 @@ window.D225_CATALOG = {
       canvaUrl: 'https://canva.link/sihuhrbi6548llk'
     },
     {
+      id: 'dtm-01',
+      category: 'dtm',
+      title: 'DTM — Design 1',
+      tags: ['dtm', 'distinguished toastmaster', 'recognition', 'milestone'],
+      format: 'Square',
+      image: 'assets/dtm-01.png',
+      canvaUrl: 'https://canva.link/2oxyhsw9oj2pt10'
+    },
+    {
+      id: 'dtm-02',
+      category: 'dtm',
+      title: 'DTM — Design 2',
+      tags: ['dtm', 'distinguished toastmaster', 'recognition', 'milestone'],
+      format: 'Square',
+      image: 'assets/dtm-02.png',
+      canvaUrl: 'https://canva.link/n383rq7xvpq4swy'
+    },
+    {
+      id: 'dtm-03',
+      category: 'dtm',
+      title: 'DTM — Design 3',
+      tags: ['dtm', 'distinguished toastmaster', 'recognition', 'milestone'],
+      format: 'Square',
+      image: 'assets/dtm-03.png',
+      canvaUrl: 'https://canva.link/kl1brb5ugk8vzib'
+    },
+    {
       id: 'club-contest-01',
       category: 'club-contest',
       title: 'Speech Contests — Design 1',
