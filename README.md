@@ -42,14 +42,34 @@ Use a unique `id` for every design. Set `role` and descriptive `tags` for specif
 | Happy Birthday | `birthday` |
 | Winners — Role Players | `role-player-winners` |
 | Agenda & MoM | `agenda` |
-| Club Contest | `club-contest` |
-| Testimonials | `testimonials` |
+| Speech Contests (Club, Area, Division, District) | `club-contest` |
+| Certificate Templates | `certificates` |
+
+## Add an A4 landscape certificate
+
+The certificate collection is accessed through **More PR Resources → Explore certificates**. Use `category: 'certificates'`, not a new poster category. Name the previews `assets/certificates-01.png`, `assets/certificates-02.png`, and so on. Export them in **A4 landscape** proportions (approximately 1.414:1), and set `format: 'A4 Landscape'` so the collection tiles display the entire horizontal design without cropping. JPEG and WebP previews work too; make the file extension in `image` match what you upload.
+
+Add each design to the `templates` array in `catalog.js`:
+
+```js
+{
+  id: 'certificates-01',
+  category: 'certificates',
+  title: 'Certificate — Design 1',
+  tags: ['certificate', 'recognition', 'appreciation'],
+  format: 'A4 Landscape',
+  image: 'assets/certificates-01.png',
+  canvaUrl: 'https://canva.link/YOUR_TEMPLATE_LINK'
+},
+```
+
+Use a unique ID and matching preview number for each certificate. Upload the preview to `assets/` before adding its entry, or leave `canvaUrl: ''` temporarily if the editable template link is not ready. Send the previews and Canva template links in numbered order, and they can be mapped to the certificate collection.
 
 ## Caption prompts and PR contact
 
-The **Caption Prompt Library** is defined in `catalog.js` under `captionPrompts`. Add or edit an entry there to change its title, category, search tags, and prompt text. `captionPromptRules` contains the common fact-checking and tone instructions appended to every copied prompt.
+The **Caption Prompt Library** is defined in `catalog.js` under `captionPrompts`. Each entry includes a prompt and sample caption. `captionPromptRules` contains the common fact-checking and tone instructions appended to copied prompts.
 
-The PR contact button at the end of the page remains disabled while `prContactEmails` is empty. Set it to the team's recipient addresses in `catalog.js` to enable a prefilled `mailto:` request. This opens the visitor's email application; it does not send email automatically. An in-site submission form would require a backend or email service.
+The PR contact button uses the recipient addresses in `prContactEmails` in `catalog.js`. It opens a prefilled email in the visitor's mail application; the website does not send email automatically.
 
 ## Preview locally
 

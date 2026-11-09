@@ -53,7 +53,8 @@
 
   function createPreview(item, large = false) {
     const frame = document.createElement('div'); frame.className = large ? 'design-preview-frame' : 'template-preview-frame';
-    if (!large && /^A4\b/i.test(item.format || '')) frame.classList.add('is-portrait');
+    if (!large && /^A4\s+Portrait\b/i.test(item.format || '')) frame.classList.add('is-portrait');
+    if (!large && /^A4\s+Landscape\b/i.test(item.format || '')) frame.classList.add('is-landscape');
     const placeholder = document.createElement('div'); placeholder.className = 'template-placeholder'; placeholder.textContent = item.title;
     if (validPreview(item.image)) {
       const img = document.createElement('img'); img.src = item.image; img.alt = `Full preview of ${item.title}`; img.loading = large ? 'eager' : 'lazy'; img.decoding = 'async';
