@@ -354,6 +354,60 @@ window.D225_CATALOG = {
       canvaUrl: 'https://canva.link/7pg04z1i1dl9nz2'
     },
     {
+      id: 'birthday-01',
+      category: 'birthday',
+      title: 'Happy Birthday — Design 1',
+      tags: ['birthday', 'wishes', 'celebration', 'member'],
+      format: 'Square',
+      image: 'assets/birthday-01.png',
+      canvaUrl: 'https://canva.link/k0solkmpywm93lr'
+    },
+    {
+      id: 'birthday-02',
+      category: 'birthday',
+      title: 'Happy Birthday — Design 2',
+      tags: ['birthday', 'wishes', 'celebration', 'member'],
+      format: 'Square',
+      image: 'assets/birthday-02.png',
+      canvaUrl: 'https://canva.link/lz3hbc3q31f3s4g'
+    },
+    {
+      id: 'birthday-03',
+      category: 'birthday',
+      title: 'Happy Birthday — Design 3',
+      tags: ['birthday', 'wishes', 'celebration', 'member'],
+      format: 'Square',
+      image: 'assets/birthday-03.png',
+      canvaUrl: 'https://canva.link/fn7jctdmtyt4m1h'
+    },
+    {
+      id: 'birthday-04',
+      category: 'birthday',
+      title: 'Happy Birthday — Design 4',
+      tags: ['birthday', 'wishes', 'celebration', 'member'],
+      format: 'Square',
+      image: 'assets/birthday-04.png',
+      canvaUrl: 'https://canva.link/1oyru3l9lwr9lg4'
+    },
+    {
+      id: 'birthday-05',
+      category: 'birthday',
+      title: 'Happy Birthday — Design 5',
+      tags: ['birthday', 'wishes', 'celebration', 'member'],
+      format: 'Square',
+      image: 'assets/birthday-05.png',
+      canvaUrl: 'https://canva.link/bcbxhkh4g0d7s4f'
+    },
+    {
+      id: 'birthday-06',
+      category: 'birthday',
+      title: 'Happy Birthday — Design 6',
+      tags: ['birthday', 'wishes', 'celebration', 'member'],
+      format: 'Square',
+      image: 'assets/birthday-06.png',
+      canvaUrl: 'https://canva.link/k799p1j9h6unnoo'
+    },
+    {
       id: 'club-contest-01',
       category: 'club-contest',
       title: 'Speech Contests — Design 1',
