@@ -172,3 +172,11 @@
 #search-tip-action{text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
 #search-tip-close{font-size:22px;line-height:1;padding:4px 6px}
 @media(max-width:620px){.search-tip{flex-wrap:wrap;gap:8px}.search-tip p{flex-basis:calc(100% - 52px)}#search-tip-action{margin-left:29px}}
+
+/* Design-to-caption handoff */
+.design-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.design-actions .button{margin-top:18px;min-height:52px;padding:15px 17px;gap:12px;justify-content:center}
+.button-caption{background:var(--yellow);color:var(--blue)}
+.button-caption:hover{background:#ead566}
+.design-actions .button[hidden]{display:none}
+.prompt-card{scroll-margin-top:22px}

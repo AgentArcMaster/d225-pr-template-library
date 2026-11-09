@@ -87,6 +87,11 @@
     history.replaceState(null, '', `#collection-${id}`);
   }
 
+  const promptForDesign = item => {
+    if (item.category === 'agenda' && /\b(mom|minutes)\b/i.test([item.title, item.role, ...(item.tags || [])].join(' '))) return 'mom';
+    return ({ 'club-awards': 'club-award', 'role-player-winners': 'role-winner', 'testimonials': 'testimonial' })[item.category] || item.category;
+  };
+
   function openDesign(item) {
     if (!dialog.open) { returnFocus = document.activeElement; dialog.showModal(); }
     showCollection(item.category);
@@ -100,6 +105,10 @@
     if (hasLink) link.href = item.canvaUrl;
     else link.removeAttribute('href');
     document.querySelector('#design-link-pending').hidden = hasLink;
+    const captionButton = document.querySelector('#design-caption-button');
+    const promptId = promptForDesign(item);
+    captionButton.hidden = !window.D225_CATALOG.captionPrompts.some(prompt => prompt.id === promptId);
+    captionButton.dataset.promptId = promptId;
     collectionView.hidden = true;
     designView.hidden = false;
     dialog.setAttribute('aria-labelledby', 'design-title');
@@ -164,6 +173,13 @@
     if (event.key === '/' && !dialog.open && !document.querySelector('#zoom-dialog')?.open && !/input|textarea/i.test(document.activeElement.tagName)) { event.preventDefault(); search.focus(); }
   });
   document.querySelector('#dialog-close').addEventListener('click', () => dialog.close());
+  document.querySelector('#design-caption-button').addEventListener('click', event => {
+    const promptId = event.currentTarget.dataset.promptId;
+    if (!promptId) return;
+    returnFocus = null;
+    dialog.close();
+    location.hash = `prompt-${encodeURIComponent(promptId)}`;
+  });
   document.querySelector('#design-back').addEventListener('click', () => {
     showCollection(activeCollectionId);
     document.querySelector('#dialog-close').focus();
@@ -287,6 +303,7 @@
   function makeCard(item, index) {
     const card = document.createElement('article');
     card.className = 'prompt-card';
+    card.id = `prompt-${item.id}`;
     const top = document.createElement('div');
     top.className = 'prompt-card-top';
     const category = document.createElement('span');
@@ -331,6 +348,21 @@
 
   search.addEventListener('input', render);
   render();
+
+  function openPromptFromHash() {
+    if (!location.hash.startsWith('#prompt-')) return;
+    const id = decodeURIComponent(location.hash.slice('#prompt-'.length));
+    const item = captionPrompts.find(prompt => prompt.id === id);
+    if (!item) return;
+    search.value = item.title;
+    render();
+    const card = document.getElementById(`prompt-${item.id}`);
+    card.querySelector('details').open = true;
+    card.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+    card.querySelector('summary').focus({ preventScroll: true });
+  }
+  window.addEventListener('hashchange', openPromptFromHash);
+  openPromptFromHash();
 
   const contactButton = document.querySelector('#pr-contact-button');
   const contactNote = document.querySelector('#pr-contact-note');
