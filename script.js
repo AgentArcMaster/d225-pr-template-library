@@ -531,7 +531,7 @@
   function startRotation() {
     stopRotation();
     if (paused || motionPreference.matches || document.hidden) return;
-    timer = setTimeout(() => { showSlide(active + 1); startRotation(); }, 5500);
+    timer = setTimeout(() => { showSlide(active + 1); startRotation(); }, 2500);
   }
 
   function updateAutoplay() {
