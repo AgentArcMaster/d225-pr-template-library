@@ -264,6 +264,24 @@ window.D225_CATALOG = {
       canvaUrl: 'https://canva.link/fnx4v8vkgmcivqv'
     },
     {
+      id: 'club-awards-01',
+      category: 'club-awards',
+      title: 'Club Awards — Design 1',
+      tags: ['club award', 'recognition', 'achievement'],
+      format: 'Square',
+      image: 'assets/club-awards-01.png',
+      canvaUrl: 'https://canva.link/pba5s6g8aasmwia'
+    },
+    {
+      id: 'club-awards-02',
+      category: 'club-awards',
+      title: 'Club Awards — Design 2',
+      tags: ['club award', 'recognition', 'achievement'],
+      format: 'Square',
+      image: 'assets/club-awards-02.png',
+      canvaUrl: 'https://canva.link/sihuhrbi6548llk'
+    },
+    {
       id: 'club-contest-01',
       category: 'club-contest',
       title: 'Speech Contests — Design 1',
