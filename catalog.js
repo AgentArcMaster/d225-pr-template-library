@@ -329,7 +329,7 @@ window.D225_CATALOG = {
       { id: 'treasurers', label: 'Treasurers', url: 'https://drive.google.com/drive/folders/1JuUBMroiLesMzyPrOt-ur4WyUcpmkV4o' },
       { id: 'sergeant-at-arms', label: 'Sergeant at Arms', url: 'https://drive.google.com/drive/folders/1BUDkEgHITSR48vzW_JattT2ueJ3yMAF7' }
     ],
-    customCanvaUrl: ''
+    customCanvaUrl: 'https://canva.link/7h6kt03zvl335iq'
   },
   captionPromptRules: "Write for [Platform: Instagram/LinkedIn/Facebook] at [Length: short/medium]. Use a warm, specific, professional Toastmasters tone. Use only the facts supplied; never invent names, dates, roles, achievements, quotes, results, or links. Omit optional fields left blank. If an essential fact is missing, mark it [missing detail] rather than guessing. Avoid clichés, excessive emojis, and Markdown asterisks. Include a clear call to action only where relevant and at most three suitable hashtags. Return only the finished caption.",
   captionPrompts: [
