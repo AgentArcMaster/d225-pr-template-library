@@ -210,6 +210,9 @@
   certificatesCount.textContent = certificateDesignCount
     ? `${certificateDesignCount} ${certificateDesignCount === 1 ? 'design' : 'designs'} available`
     : 'Designs coming soon';
+  document.querySelector('.certificate-sheet small').textContent = certificateDesignCount
+    ? `${certificateDesignCount} DESIGNS AVAILABLE`
+    : 'DESIGNS COMING SOON';
   document.querySelector('#certificates-explore').addEventListener('click', () => openCollection('certificates'));
   collectionTipAction.addEventListener('click', () => {
     if (!collectionTipAction.dataset.collection) return;

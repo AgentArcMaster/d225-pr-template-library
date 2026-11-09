@@ -18,7 +18,7 @@ window.D225_CATALOG = {
     { id: 'role-player-winners', title: 'Winners — Role Players', tag: 'Recognition', keywords: 'best role player award meeting timer grammarian ah counter ah-counter sergeant at arms saa techmaster ballot counter vote counter quizmaster individual', note: 'More designs dropping soon.', mark: '10' },
     { id: 'agenda', title: 'Agenda & MoM', tag: 'Meetings', keywords: 'agenda mom minutes of meeting meeting minutes program schedule', details: 'Meeting agenda and Minutes of Meeting (MoM) designs.', note: 'More designs dropping soon.', mark: '11' },
     { id: 'club-contest', title: 'Speech Contests', tag: 'Contests', keywords: 'club area division district contest winner participant contestants contestant contest officials contest chair chief judge cc cj humorous evaluation international table topics tmod ge ttm toastmaster of the day general evaluator table topics master', details: 'Templates for club, area, division, and district contest winners, participants, and officials.', note: 'More designs dropping soon.', mark: '12' },
-    { id: 'certificates', title: 'Certificate Templates', tag: 'Recognition', keywords: 'certificate recognition appreciation award achievement', details: 'Browse editable certificates for recognition and appreciation. Designs will appear here as the PR team releases them.', mark: '13' }
+    { id: 'certificates', title: 'Certificate Templates', tag: 'Recognition', keywords: 'certificate recognition appreciation award achievement participation contest', details: 'Browse editable certificates for recognition and appreciation. Designs will appear here as the PR team releases them.', note: 'More designs dropping soon.', mark: '13' }
   ],
   templates: [
     {
@@ -542,12 +542,53 @@ window.D225_CATALOG = {
       format: 'Square',
       image: 'assets/club-contest-06.png',
       canvaUrl: 'https://canva.link/axp0f3s1zkzlpbm'
+    },
+    {
+      id: 'certificates-01', category: 'certificates', title: 'Appreciation Certificate — Design 1',
+      tags: ['certificate of appreciation', 'recognition', 'contribution'], format: 'A4 Landscape',
+      image: 'assets/certificates-01.png', canvaUrl: 'https://canva.link/l5bawtgvjipfs5p'
+    },
+    {
+      id: 'certificates-02', category: 'certificates', title: 'Appreciation Certificate — Design 2',
+      tags: ['certificate of appreciation', 'recognition', 'contribution'], format: 'A4 Landscape',
+      image: 'assets/certificates-02.png', canvaUrl: 'https://canva.link/5fr04lb1fnwe3ha'
+    },
+    {
+      id: 'certificates-03', category: 'certificates', title: 'Appreciation Certificate — Design 3',
+      tags: ['certificate of appreciation', 'recognition', 'contribution'], format: 'A4 Landscape',
+      image: 'assets/certificates-03.png', canvaUrl: 'https://canva.link/qvas4dzv7pz0lqh'
+    },
+    {
+      id: 'certificates-04', category: 'certificates', title: 'Participation Certificate — Design 4',
+      tags: ['certificate of participation', 'participant', 'event'], format: 'A4 Landscape',
+      image: 'assets/certificates-04.png', canvaUrl: 'https://canva.link/ar02wo7393jon40'
+    },
+    {
+      id: 'certificates-05', category: 'certificates', title: 'Appreciation Certificate — Design 5',
+      tags: ['certificate of appreciation', 'recognition', 'support'], format: 'A4 Landscape',
+      image: 'assets/certificates-05.png', canvaUrl: 'https://canva.link/jpf79cpyyt15rhm'
+    },
+    {
+      id: 'certificates-06', category: 'certificates', title: 'Contest Certificate — 1st Place · Design 6',
+      tags: ['speech contest', 'contest certificate', 'winner', 'first place', '1st place', 'first position', '1st position', 'gold'], format: 'A4 Landscape',
+      image: 'assets/certificates-06.png', canvaUrl: 'https://canva.link/fexj7v6k2bwucfl'
+    },
+    {
+      id: 'certificates-07', category: 'certificates', title: 'Contest Certificate — 2nd Place · Design 7',
+      tags: ['speech contest', 'contest certificate', 'winner', 'second place', '2nd place', 'second position', '2nd position', 'silver'], format: 'A4 Landscape',
+      image: 'assets/certificates-07.png', canvaUrl: 'https://canva.link/rxsp4dpgusya82s'
+    },
+    {
+      id: 'certificates-08', category: 'certificates', title: 'Contest Certificate — 3rd Place · Design 8',
+      tags: ['speech contest', 'contest certificate', 'winner', 'third place', '3rd place', 'third position', '3rd position', 'bronze'], format: 'A4 Landscape',
+      image: 'assets/certificates-08.png', canvaUrl: 'https://canva.link/dc3wpra7w8xeln8'
+    },
+    {
+      id: 'certificates-09', category: 'certificates', title: 'Appreciation Certificate — Design 9',
+      tags: ['certificate of appreciation', 'recognition', 'contribution'], format: 'A4 Landscape',
+      image: 'assets/certificates-09.png', canvaUrl: 'https://canva.link/rcyfto8ncunykkw'
     }
   ],
-  // Add certificate designs to templates with category: 'certificates'.
-  // Example: { id: 'certificates-01', category: 'certificates', title: 'Certificate — Design 1',
-  //   tags: ['appreciation'], format: 'A4 Landscape', image: 'assets/certificates-01.png',
-  //   canvaUrl: 'https://canva.link/...' }
   presentation: { canvaUrl: 'https://canva.link/1l3krqcb8ensloa' },
   zoom: {
     roles: [
