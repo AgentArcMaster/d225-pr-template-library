@@ -561,6 +561,15 @@ window.D225_CATALOG = {
       image: 'assets/club-contest-08.png',
       canvaUrl: 'https://canva.link/p3px41oa72gbiky'
     },
+     {
+      id: 'club-contest-09',
+      category: 'club-contest',
+      title: 'Speech Contests — Design 9',
+      tags: ['speech contest', 'club contest', 'area contest', 'division contest', 'district contest', 'winner', 'participant', 'contest official', 'chief judge', 'contest chair', 'cc', 'cj', 'cc cj', 'contestant', 'contestants', 'tmod', 'ge', 'ttm', 'toastmaster of the day', 'general evaluator', 'table topics master'],
+      format: 'Square',
+      image: 'assets/club-contest-09.png',
+      canvaUrl: 'https://canva.link/dgb1vxkwyyrz4qp'
+    },
     {
       id: 'certificates-01', category: 'certificates', title: 'Appreciation Certificate — Design 1',
       tags: ['certificate of appreciation', 'recognition', 'contribution'], format: 'A4 Landscape',
